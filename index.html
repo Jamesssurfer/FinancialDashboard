@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inflation Trend Dashboard</title>
+<style>
+  :root { --up:#c0392b; --down:#1e8449; --flat:#7f8c8d; --bg:#0f1115; --card:#181b21; --text:#e6e6e6; --muted:#9aa0a6; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 24px; }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+  .updated { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
+
+  .summary { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .summary-card { flex: 1; min-width: 160px; background: var(--card); border-radius: 10px; padding: 14px 16px; }
+  .summary-card .label { color: var(--muted); font-size: 12px; }
+  .summary-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .summary-card .value.up { color: var(--up); }
+  .summary-card .value.down { color: var(--down); }
+  .summary-card .value.flat { color: var(--flat); }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .btn { background: var(--card); color: var(--text); border: 1px solid #2a2e37; border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; }
+  .btn.active { background: #2d6cdf; border-color: #2d6cdf; }
+  .btn:hover { border-color: #4a4f5c; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; border-bottom: 1px solid #2a2e37; }
+  td.up { color: var(--up); } td.down { color: var(--down); } td.flat { color: var(--flat); }
+</style>
+</head>
+<body>
+  <h1>US Inflation — Trend Dashboard</h1>
+  <div class="updated" id="updated">Loading…</div>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="btn-row" id="metric-buttons"></div>
+
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Current</th><th>1Y ago</th><th>3Y ago</th><th>5Y ago</th><th>10Y ago</th></tr>
+    </thead>
+    <tbody id="metric-row"></tbody>
+  </table>
+
+  <canvas id="chart" width="1100" height="260" style="margin-top:20px; width:100%; max-width:1100px; background:var(--card); border-radius:10px;"></canvas>
+
+<script>
+  // Same repo, so a relative path works on GitHub Pages. Swap for the raw.githubusercontent.com
+  // URL if this page ever lives somewhere other than the repo it reads from.
+  const DATA_URL = 'data/inflation.json';
+
+  function fmt(v, unit) {
+    if (v == null) return '—';
+    return unit === 'index' ? v.toFixed(1) : (v * 100).toFixed(2) + '%';
+  }
+  // kept for the summary cards, which are always the 3 headline (pct) metrics
+  function pct(v) { return v == null ? '—' : (v * 100).toFixed(2) + '%'; }
+  function dirClass(m) { return m.direction || 'flat'; }
+  function arrow(dir) { return dir === 'up' ? '▲' : dir === 'down' ? '▼' : '—'; }
+
+  function drawChart(m) {
+    const canvas = document.getElementById('chart');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // oldest -> newest, left to right
+    const points = [
+      { label: '10Y', p: m.y10 },
+      { label: '5Y',  p: m.y5 },
+      { label: '3Y',  p: m.y3 },
+      { label: '1Y',  p: m.y1 },
+      { label: 'Now', p: { value: m.current, date: m.currentDate } }
+    ].filter(pt => pt.p != null);
+
+    if (points.length < 2) {
+      ctx.fillStyle = '#9aa0a6';
+      ctx.font = '13px -apple-system, sans-serif';
+      ctx.fillText('Not enough history for a trend line.', 20, 30);
+      return;
+    }
+
+    const values = points.map(pt => pt.p.value);
+    const min = Math.min(...values), max = Math.max(...values);
+    const pad = (max - min) * 0.15 || Math.abs(max) * 0.1 || 1;
+    const yMin = min - pad, yMax = max + pad;
+
+    const left = 50, right = canvas.width - 30, top = 20, bottom = canvas.height - 30;
+    const x = i => left + (right - left) * (i / (points.length - 1));
+    const y = v => bottom - (bottom - top) * ((v - yMin) / (yMax - yMin));
+
+    // gridlines
+    ctx.strokeStyle = '#2a2e37';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const gy = top + (bottom - top) * (i / 4);
+      ctx.beginPath(); ctx.moveTo(left, gy); ctx.lineTo(right, gy); ctx.stroke();
+    }
+
+    // line
+    ctx.strokeStyle = '#2d6cdf';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    points.forEach((pt, i) => {
+      const px = x(i), py = y(pt.p.value);
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+
+    // points + labels
+    ctx.fillStyle = '#e6e6e6';
+    ctx.font = '11px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    points.forEach((pt, i) => {
+      const px = x(i), py = y(pt.p.value);
+      ctx.fillStyle = '#2d6cdf';
+      ctx.beginPath(); ctx.arc(px, py, 3, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#e6e6e6';
+      ctx.fillText(fmt(pt.p.value, m.unit), px, py - 10);
+      ctx.fillStyle = '#9aa0a6';
+      ctx.fillText(pt.label, px, bottom + 16);
+    });
+  }
+
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('updated').textContent = 'Updated ' + new Date(data.updated).toLocaleString();
+
+      // Top summary: the 3 headline metrics, always visible
+      const summaryEl = document.getElementById('summary');
+      data.groups.headline.forEach(key => {
+        const m = data.metrics[key];
+        summaryEl.innerHTML += `
+          <div class="summary-card">
+            <div class="label">${m.label}</div>
+            <div class="value ${dirClass(m)}">${pct(m.current)} ${arrow(m.direction)}</div>
+          </div>`;
+      });
+
+      // Buttons replace the old dropdown — one per metric, headline + other
+      const allKeys = [...data.groups.headline, ...data.groups.other];
+      const btnRow = document.getElementById('metric-buttons');
+      allKeys.forEach((key, i) => {
+        const m = data.metrics[key];
+        const btn = document.createElement('button');
+        btn.className = 'btn' + (i === 0 ? ' active' : '');
+        btn.textContent = m.label;
+        btn.onclick = () => selectMetric(key, btn);
+        btnRow.appendChild(btn);
+      });
+
+      window._data = data;
+      selectMetric(allKeys[0]);
+    })
+    .catch(err => {
+      document.getElementById('updated').textContent = 'Could not load data/inflation.json — ' + err;
+    });
+
+  function selectMetric(key, btnEl) {
+    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+
+    const m = window._data.metrics[key];
+    const row = document.getElementById('metric-row');
+    row.innerHTML = `
+      <tr>
+        <td>${m.label}</td>
+        <td class="${dirClass(m)}">${fmt(m.current, m.unit)}</td>
+        <td>${fmt(m.y1 && m.y1.value, m.unit)}</td>
+        <td>${fmt(m.y3 && m.y3.value, m.unit)}</td>
+        <td>${fmt(m.y5 && m.y5.value, m.unit)}</td>
+        <td>${fmt(m.y10 && m.y10.value, m.unit)}</td>
+      </tr>`;
+    drawChart(m);
+  }
+</script>
+</body>
+</html>
