@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T22:20:13.792Z",
+  "updated": "2026-08-22T22:28:55.992Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -28,6 +28,7 @@
     "cpi_yoy": {
       "key": "cpi_yoy",
       "label": "CPI Y/Y",
+      "unit": "pct",
       "current": 0.034,
       "currentDate": "2026-07-01",
       "y1": {
@@ -51,6 +52,7 @@
     "core_cpi_yoy": {
       "key": "core_cpi_yoy",
       "label": "Core CPI Y/Y",
+      "unit": "pct",
       "current": 0.025,
       "currentDate": "2026-07-01",
       "y1": {
@@ -74,6 +76,7 @@
     "core_pce_yoy": {
       "key": "core_pce_yoy",
       "label": "Core PCE Y/Y",
+      "unit": "pct",
       "current": 0.03246805343824044,
       "currentDate": "2026-06-01",
       "y1": {
@@ -97,6 +100,7 @@
     "cpi_mom": {
       "key": "cpi_mom",
       "label": "CPI M/M",
+      "unit": "pct",
       "current": 0.001,
       "currentDate": "2026-07-01",
       "y1": {
@@ -120,6 +124,7 @@
     "core_cpi_mom": {
       "key": "core_cpi_mom",
       "label": "Core CPI M/M",
+      "unit": "pct",
       "current": 0.002,
       "currentDate": "2026-07-01",
       "y1": {
@@ -143,6 +148,7 @@
     "ppi_mom": {
       "key": "ppi_mom",
       "label": "PPI M/M",
+      "unit": "pct",
       "current": 0,
       "currentDate": "2026-07-01",
       "y1": {
@@ -166,6 +172,7 @@
     "ppi_yoy": {
       "key": "ppi_yoy",
       "label": "PPI Y/Y",
+      "unit": "pct",
       "current": 0.0499778682588119,
       "currentDate": "2026-07-01",
       "y1": {
@@ -186,6 +193,7 @@
     "core_ppi_mom": {
       "key": "core_ppi_mom",
       "label": "Core PPI M/M",
+      "unit": "pct",
       "current": 0.002,
       "currentDate": "2026-07-01",
       "y1": {
@@ -209,6 +217,7 @@
     "core_ppi_yoy": {
       "key": "core_ppi_yoy",
       "label": "Core PPI Y/Y",
+      "unit": "pct",
       "current": 0.042752333220549055,
       "currentDate": "2026-07-01",
       "y1": {
@@ -232,6 +241,7 @@
     "core_pce_mom": {
       "key": "core_pce_mom",
       "label": "Core PCE M/M",
+      "unit": "pct",
       "current": 0.001,
       "currentDate": "2026-06-01",
       "y1": {
@@ -255,6 +265,7 @@
     "eci_qoq": {
       "key": "eci_qoq",
       "label": "Employment Cost Index Q/Q",
+      "unit": "pct",
       "current": 0.009,
       "currentDate": "2026-04-01",
       "y1": {
@@ -278,6 +289,7 @@
     "avg_hourly_mom": {
       "key": "avg_hourly_mom",
       "label": "Average Hourly Earnings M/M",
+      "unit": "pct",
       "current": 0.001,
       "currentDate": "2026-07-01",
       "y1": {
@@ -301,6 +313,7 @@
     "import_mom": {
       "key": "import_mom",
       "label": "Import Price Index M/M",
+      "unit": "pct",
       "current": -0.004,
       "currentDate": "2026-07-01",
       "y1": {
@@ -324,6 +337,7 @@
     "export_mom": {
       "key": "export_mom",
       "label": "Export Price Index M/M",
+      "unit": "pct",
       "current": -0.013,
       "currentDate": "2026-07-01",
       "y1": {
@@ -347,6 +361,7 @@
     "prelim_uom": {
       "key": "prelim_uom",
       "label": "Prelim UoM Inflation Expectation",
+      "unit": "pct",
       "current": 0.043,
       "currentDate": "2026-07-01",
       "y1": {
@@ -370,6 +385,7 @@
     "uom": {
       "key": "uom",
       "label": "UoM Inflation Expectation",
+      "unit": "pct",
       "current": 0.042,
       "currentDate": "2026-06-01",
       "y1": {
@@ -393,6 +409,7 @@
     "ism_mfg": {
       "key": "ism_mfg",
       "label": "ISM Manufacturing Prices Paid",
+      "unit": "index",
       "current": 71.1,
       "currentDate": "2026-07-01",
       "y1": {
@@ -416,6 +433,7 @@
     "ism_svc": {
       "key": "ism_svc",
       "label": "ISM Services Prices Paid",
+      "unit": "index",
       "current": 70.3,
       "currentDate": "2026-07-01",
       "y1": {
