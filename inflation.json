@@ -1,0 +1,437 @@
+{
+  "updated": "2026-08-22T22:03:51.531561Z",
+  "groups": {
+    "headline": [
+      "cpi_yoy",
+      "core_cpi_yoy",
+      "core_pce_yoy"
+    ],
+    "other": [
+      "cpi_mom",
+      "core_cpi_mom",
+      "ppi_mom",
+      "ppi_yoy",
+      "core_ppi_mom",
+      "core_ppi_yoy",
+      "core_pce_mom",
+      "eci_qoq",
+      "avg_hourly_mom",
+      "import_mom",
+      "export_mom",
+      "prelim_uom",
+      "uom",
+      "ism_mfg",
+      "ism_svc"
+    ]
+  },
+  "metrics": {
+    "cpi_yoy": {
+      "key": "cpi_yoy",
+      "label": "CPI Y/Y",
+      "current": 0.034,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.027,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.032,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.054,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.008,
+        "date": "2016-07-01"
+      },
+      "direction": "up"
+    },
+    "core_cpi_yoy": {
+      "key": "core_cpi_yoy",
+      "label": "Core CPI Y/Y",
+      "current": 0.025,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.031,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.047,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.043,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.022,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "core_pce_yoy": {
+      "key": "core_pce_yoy",
+      "label": "Core PCE Y/Y",
+      "current": 0.0324680534382404,
+      "currentDate": "2026-06-01",
+      "y1": {
+        "value": 0.0252808408921981,
+        "date": "2025-06-01"
+      },
+      "y3": {
+        "value": 0.0407267325068956,
+        "date": "2023-06-01"
+      },
+      "y5": {
+        "value": 0.0355438386630358,
+        "date": "2021-06-01"
+      },
+      "y10": {
+        "value": 0.0100400820910518,
+        "date": "2016-06-01"
+      },
+      "direction": "up"
+    },
+    "cpi_mom": {
+      "key": "cpi_mom",
+      "label": "CPI M/M",
+      "current": 0.001,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.002,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.002,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.005,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "core_cpi_mom": {
+      "key": "core_cpi_mom",
+      "label": "Core CPI M/M",
+      "current": 0.002,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.003,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.002,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.003,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.001,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "ppi_mom": {
+      "key": "ppi_mom",
+      "label": "PPI M/M",
+      "current": 0,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.009,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.003,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.01,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": -0.004,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "ppi_yoy": {
+      "key": "ppi_yoy",
+      "label": "PPI Y/Y",
+      "current": 0.0499778682588119,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.0150285386657696,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.00694758857785871,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.078620650301906,
+        "date": "2021-07-01"
+      },
+      "y10": null,
+      "direction": "up"
+    },
+    "core_ppi_mom": {
+      "key": "core_ppi_mom",
+      "label": "Core PPI M/M",
+      "current": 0.002,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.009,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.003,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.01,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": -0.003,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "core_ppi_yoy": {
+      "key": "core_ppi_yoy",
+      "label": "Core PPI Y/Y",
+      "current": 0.0427523332205491,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.0170769235394297,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.02424638463208,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.0679454046415486,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.00800591984907206,
+        "date": "2016-07-01"
+      },
+      "direction": "up"
+    },
+    "core_pce_mom": {
+      "key": "core_pce_mom",
+      "label": "Core PCE M/M",
+      "current": 0.001,
+      "currentDate": "2026-06-01",
+      "y1": {
+        "value": 0.003,
+        "date": "2025-06-01"
+      },
+      "y3": {
+        "value": 0.002,
+        "date": "2023-06-01"
+      },
+      "y5": {
+        "value": 0.004,
+        "date": "2021-06-01"
+      },
+      "y10": {
+        "value": 0.001,
+        "date": "2016-06-01"
+      },
+      "direction": "down"
+    },
+    "eci_qoq": {
+      "key": "eci_qoq",
+      "label": "Employment Cost Index Q/Q",
+      "current": 0.009,
+      "currentDate": "2026-04-01",
+      "y1": {
+        "value": 0.009,
+        "date": "2025-04-01"
+      },
+      "y3": {
+        "value": 0.01,
+        "date": "2023-04-01"
+      },
+      "y5": {
+        "value": 0.007,
+        "date": "2021-04-01"
+      },
+      "y10": {
+        "value": 0.006,
+        "date": "2016-04-01"
+      },
+      "direction": "flat"
+    },
+    "avg_hourly_mom": {
+      "key": "avg_hourly_mom",
+      "label": "Average Hourly Earnings M/M",
+      "current": 0.001,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.003,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.004,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.004,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.003,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "import_mom": {
+      "key": "import_mom",
+      "label": "Import Price Index M/M",
+      "current": -0.004,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.004,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.004,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.003,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.001,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "export_mom": {
+      "key": "export_mom",
+      "label": "Export Price Index M/M",
+      "current": -0.013,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.003,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.003,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.011,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.002,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "prelim_uom": {
+      "key": "prelim_uom",
+      "label": "Prelim UoM Inflation Expectation",
+      "current": 0.043,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 0.049,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 0.033,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 0.046,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 0.025,
+        "date": "2016-07-01"
+      },
+      "direction": "down"
+    },
+    "uom": {
+      "key": "uom",
+      "label": "UoM Inflation Expectation",
+      "current": 0.042,
+      "currentDate": "2026-06-01",
+      "y1": {
+        "value": 0.045,
+        "date": "2025-06-01"
+      },
+      "y3": {
+        "value": 0.034,
+        "date": "2023-06-01"
+      },
+      "y5": {
+        "value": 0.047,
+        "date": "2021-06-01"
+      },
+      "y10": {
+        "value": 0.027,
+        "date": "2016-06-01"
+      },
+      "direction": "down"
+    },
+    "ism_mfg": {
+      "key": "ism_mfg",
+      "label": "ISM Manufacturing Prices Paid",
+      "current": 71.1,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 64.8,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 42.6,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 85.7,
+        "date": "2021-07-01"
+      },
+      "y10": {
+        "value": 55,
+        "date": "2016-07-01"
+      },
+      "direction": "up"
+    },
+    "ism_svc": {
+      "key": "ism_svc",
+      "label": "ISM Services Prices Paid",
+      "current": 70.3,
+      "currentDate": "2026-07-01",
+      "y1": {
+        "value": 69.9,
+        "date": "2025-07-01"
+      },
+      "y3": {
+        "value": 56.8,
+        "date": "2023-07-01"
+      },
+      "y5": {
+        "value": 82.3,
+        "date": "2021-07-01"
+      },
+      "y10": null,
+      "direction": "up"
+    }
+  }
+}
