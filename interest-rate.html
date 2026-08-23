@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real Interest Rate Dashboard</title>
+<style>
+  :root { --up:#e5484d; --down:#e5484d; --good:#30a46c; --bad:#e5484d; --flat:#8a8f98; --bg:#0b0d10; --card:#15171c; --text:#eceef1; --muted:#8a8f98; --accent:#5884ff; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 0 24px 24px; }
+  nav { display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 0; margin-bottom: 12px; border-bottom: 1px solid #22252c; }
+  nav a { color: var(--muted); font-size: 13px; text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+  nav a:hover { color: var(--text); background: var(--card); }
+  nav a.active { color: var(--text); background: var(--accent); }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+  h2 { font-size: 14px; font-weight: 600; color: var(--muted); margin: 28px 0 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .updated { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
+  .note { color: var(--muted); font-size: 12px; margin: -4px 0 14px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; border-bottom: 1px solid #2a2e37; }
+  tbody tr:not(:last-child) td { border-bottom: 1px solid #22252c; }
+  td.pos { color: var(--good); } /* positive real rate = green, currency-strength convention */
+  td.neg { color: var(--bad); }
+  .rank-badge { display:inline-block; width:20px; height:20px; border-radius:50%; background:#2a2e37; text-align:center; line-height:20px; font-size:11px; margin-right:8px; }
+  .rank-badge.top { background: var(--accent); }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="inflation.html">Inflation</a>
+    <a href="labor.html">Labor Market</a>
+    <a href="economy.html">Economy</a>
+    <a href="consumer.html">Consumer</a>
+    <a href="interest-rate.html" class="active">Interest Rate</a>
+  </nav>
+  <h1>Real Interest Rate — Country Comparison</h1>
+  <div class="updated" id="updated">Loading…</div>
+
+  <h2>Current Month</h2>
+  <div class="note">Each country shows its own latest available reading — release dates differ by country, so these dates won't all match.</div>
+  <table>
+    <thead>
+      <tr><th>Country</th><th>As of</th><th>Interest Rate</th><th>Inflation Rate</th><th>Real Rate</th></tr>
+    </thead>
+    <tbody id="current-body"></tbody>
+  </table>
+
+  <h2>Rolling 3-Month Ranking — Highest Real Rate</h2>
+  <div class="note">Ranked by the average real rate over each country's latest 3 available readings, not the single latest print — avoids a one-off spike distorting the ranking.</div>
+  <table>
+    <thead>
+      <tr><th>Rank</th><th>Country</th><th>3M Avg Real Rate</th><th>Months Used</th></tr>
+    </thead>
+    <tbody id="rank-body"></tbody>
+  </table>
+
+<script>
+  const DATA_URL = 'data/interest-rate.json';
+
+  function pct(v) { return v == null ? '—' : (v * 100).toFixed(2) + '%'; }
+  function cls(v) { return v == null ? '' : (v >= 0 ? 'pos' : 'neg'); }
+
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('updated').textContent = 'Updated ' + new Date(data.updated).toLocaleString();
+
+      const currentBody = document.getElementById('current-body');
+      // current-month table: keep original country order (not rank order)
+      data.countries.slice().sort((a, b) => a.key.localeCompare(b.key)).forEach(c => {
+        currentBody.innerHTML += `
+          <tr>
+            <td>${c.label}</td>
+            <td>${c.currentDate}</td>
+            <td>${pct(c.interestRate)}</td>
+            <td>${pct(c.inflationRate)}</td>
+            <td class="${cls(c.realRate)}">${pct(c.realRate)}</td>
+          </tr>`;
+      });
+
+      const rankBody = document.getElementById('rank-body');
+      // already sorted by rank from the sync script
+      data.countries.forEach(c => {
+        rankBody.innerHTML += `
+          <tr>
+            <td><span class="rank-badge ${c.rank <= 3 ? 'top' : ''}">${c.rank}</span></td>
+            <td>${c.label}</td>
+            <td class="${cls(c.avg3mRealRate)}">${pct(c.avg3mRealRate)}</td>
+            <td>${c.avg3mMonths.join(', ')}</td>
+          </tr>`;
+      });
+    })
+    .catch(err => {
+      document.getElementById('updated').textContent = 'Could not load data/interest-rate.json — ' + err;
+    });
+</script>
+</body>
+</html>

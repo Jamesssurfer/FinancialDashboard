@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Financial Dashboard</title>
+<style>
+  :root { --bg:#0b0d10; --card:#15171c; --card2:#191c22; --text:#eceef1; --muted:#8a8f98; --accent:#5884ff; --border:#22252c; --good:#30a46c; --bad:#e5484d; --flat:#8a8f98; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 28px 24px 40px; -webkit-font-smoothing: antialiased; }
+  h1 { font-size: 19px; font-weight: 650; margin: 0 0 18px; letter-spacing: -0.01em; }
+  h2 { font-size: 12px; font-weight: 650; color: var(--muted); margin: 30px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  a.card { flex: 1; min-width: 180px; display: block; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; text-decoration: none; color: var(--text); transition: border-color 0.15s; }
+  a.card:hover { border-color: var(--accent); }
+  .card-title { font-size: 14px; font-weight: 650; margin-bottom: 5px; }
+  .card-desc { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+
+  .regime-box { display: flex; gap: 16px; flex-wrap: wrap; }
+  .regime-card { flex: 2; min-width: 260px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+  .regime-name { font-size: 22px; font-weight: 700; margin: 6px 0 6px; }
+  .regime-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .regime-inputs { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
+  .regime-input { font-size: 11.5px; color: var(--muted); }
+  .regime-input b { color: var(--text); font-size: 13px; }
+  .eyebrow { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .sahm-card { flex: 1; min-width: 220px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+  .sahm-value { font-size: 28px; font-weight: 750; margin: 8px 0 4px; }
+  .sahm-value.good { color: var(--good); } .sahm-value.bad { color: var(--bad); } .sahm-value.flat { color: var(--flat); }
+  .sahm-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  .headline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .domain-block { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .domain-title { font-size: 11px; font-weight: 650; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .domain-metric { margin-bottom: 8px; }
+  .domain-metric:last-child { margin-bottom: 0; }
+  .domain-metric .label { font-size: 10.5px; color: var(--muted); }
+  .domain-metric .value { font-size: 16px; font-weight: 650; }
+  .value.good { color: var(--good); } .value.bad { color: var(--bad); } .value.flat { color: var(--flat); }
+  @media (max-width: 900px) { .headline-grid { grid-template-columns: 1fr 1fr; } }
+
+  .chart-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .chart-title { color: var(--muted); font-size: 11.5px; font-weight: 600; margin-bottom: 8px; }
+  .chart-legend { display: flex; gap: 16px; margin-bottom: 8px; font-size: 11px; color: var(--muted); }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  canvas { width: 100%; height: 220px; display: block; }
+</style>
+</head>
+<body>
+  <h1>Financial Dashboard</h1>
+
+  <div class="row">
+    <a class="card" href="inflation.html"><div class="card-title">US Inflation</div><div class="card-desc">CPI, PPI, Core PCE, GDP Price Index</div></a>
+    <a class="card" href="labor.html"><div class="card-title">US Labor Market</div><div class="card-desc">Unemployment, payrolls, JOLTS, weekly claims</div></a>
+    <a class="card" href="economy.html"><div class="card-title">US Economy</div><div class="card-desc">GDP, ISM PMIs, Retail Sales, diagnostics</div></a>
+    <a class="card" href="consumer.html"><div class="card-title">US Consumer</div><div class="card-desc">Sentiment, income, saving, household debt</div></a>
+    <a class="card" href="interest-rate.html"><div class="card-title">Real Interest Rate</div><div class="card-desc">Current + rolling 3M ranking, 8 countries</div></a>
+  </div>
+
+  <h2>Macro Regime</h2>
+  <div class="regime-box">
+    <div class="regime-card">
+      <div class="eyebrow">Growth × Inflation Quadrant</div>
+      <div class="regime-name" id="regime-name">Loading…</div>
+      <div class="regime-desc" id="regime-desc"></div>
+      <div class="regime-inputs">
+        <div class="regime-input">ISM Composite PMI<br><b id="regime-pmi">—</b></div>
+        <div class="regime-input">Core PCE Y/Y<br><b id="regime-pce">—</b></div>
+      </div>
+    </div>
+    <div class="sahm-card">
+      <div class="eyebrow">Sahm Rule (Recession Signal)</div>
+      <div class="sahm-value" id="sahm-value">—</div>
+      <div class="sahm-desc" id="sahm-desc">3-month avg U3 minus its trailing 12-month low. ≥0.50pp has historically marked recession onset.</div>
+    </div>
+  </div>
+
+  <h2>Headline Readings</h2>
+  <div class="headline-grid" id="headline-grid"></div>
+
+  <h2>US Interest Rate — 1 Year</h2>
+  <div class="chart-box">
+    <div class="chart-legend">
+      <span><span class="dot" style="background:#5884ff"></span>Interest Rate</span>
+      <span><span class="dot" style="background:#e5484d"></span>Inflation Rate</span>
+      <span><span class="dot" style="background:#30a46c"></span>Real Rate</span>
+    </div>
+    <canvas id="us-rate-chart" width="1100" height="240"></canvas>
+  </div>
+
+<script>
+function fmtPct(v) { return v == null ? '—' : (v * 100).toFixed(2) + '%'; }
+
+function drawMultiLine(canvas, series, colors) {
+  const cssW = parseInt(canvas.getAttribute('width'), 10);
+  const cssH = parseInt(canvas.getAttribute('height'), 10);
+  const ratio = window.devicePixelRatio || 1;
+  canvas.style.width = cssW + 'px'; canvas.style.height = cssH + 'px';
+  canvas.width = cssW * ratio; canvas.height = cssH * ratio;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(ratio, ratio);
+  ctx.clearRect(0, 0, cssW, cssH);
+
+  const allVals = series.flat().map(function(p){ return p.value; });
+  if (!allVals.length) return;
+  const min = Math.min.apply(null, allVals), max = Math.max.apply(null, allVals);
+  const pad = (max - min) * 0.15 || 0.01;
+  const yMin = min - pad, yMax = max + pad;
+  const left = 50, right = cssW - 14, top = 16, bottom = cssH - 26;
+  const n = series[0].length;
+  const x = function(i){ return left + (right-left) * (i/(n-1)); };
+  const y = function(v){ return bottom - (bottom-top) * ((v-yMin)/(yMax-yMin)); };
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = 1;
+  for (let i=0;i<=3;i++){ const gy=top+(bottom-top)*(i/3); ctx.beginPath(); ctx.moveTo(left,gy); ctx.lineTo(right,gy); ctx.stroke(); }
+
+  series.forEach(function(pts, si){
+    ctx.strokeStyle = colors[si]; ctx.lineWidth = 1.75; ctx.lineJoin='round'; ctx.lineCap='round';
+    ctx.beginPath();
+    pts.forEach(function(p,i){ const px=x(i), py=y(p.value); if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py); });
+    ctx.stroke();
+  });
+
+  ctx.font = '10px -apple-system, sans-serif'; ctx.fillStyle = '#7d828c'; ctx.textAlign='left';
+  ctx.fillText(series[0][0].date, left, cssH-8);
+  ctx.textAlign='right';
+  ctx.fillText(series[0][n-1].date, right, cssH-8);
+}
+
+function last4Trend(series, unit) {
+  if (!series || series.length < 4) return null;
+  const pts = series.slice(-4);
+  const latest = pts[3].value;
+  const avg = (pts[0].value+pts[1].value+pts[2].value)/3;
+  const tol = unit === 'index' ? 0.3 : 0.0005;
+  const diff = latest - avg;
+  if (Math.abs(diff) <= tol) return 'flat';
+  return diff > 0 ? 'up' : 'down';
+}
+
+Promise.all([
+  fetch('data/inflation.json').then(function(r){ return r.json(); }),
+  fetch('data/labor.json').then(function(r){ return r.json(); }),
+  fetch('data/economy.json').then(function(r){ return r.json(); }),
+  fetch('data/consumer.json').then(function(r){ return r.json(); }),
+  fetch('data/interest-rate.json').then(function(r){ return r.json(); })
+]).then(function(results) {
+  const inflation = results[0], labor = results[1], economy = results[2], consumer = results[3], ir = results[4];
+
+  // ---- Macro Regime Quadrant ----
+  const pmi = economy.metrics.ism_composite;
+  const pce = inflation.metrics.core_pce_yoy;
+  const pmiTrend = last4Trend(pmi.series, 'index');   // up = accelerating growth
+  const pceTrend = last4Trend(pce.series, 'pct');     // up = accelerating inflation
+  const pmiExpanding = pmi.current >= 50;
+
+  let regimeName, regimeDesc;
+  const growthUp = pmiTrend === 'up' && pmiExpanding;
+  const inflUp = pceTrend === 'up';
+  if (growthUp && inflUp) { regimeName = 'Reflation'; regimeDesc = 'Growth and inflation both accelerating — classic early-cycle heat-up. Historically supportive for commodities and gold as a hedge against rising prices.'; }
+  else if (growthUp && !inflUp) { regimeName = 'Goldilocks'; regimeDesc = 'Growth accelerating while inflation cools, the markets preferred regime. Tends to favor risk assets over defensive hedges.'; }
+  else if (!growthUp && inflUp) { regimeName = 'Stagflation'; regimeDesc = 'Growth slowing while inflation accelerates — the hardest regime for policymakers. Historically one of the stronger backdrops for gold.'; }
+  else { regimeName = 'Disinflationary Slowdown'; regimeDesc = 'Growth slowing and inflation cooling together — late-cycle or early contraction. Real rates and policy expectations tend to dominate price action here.'; }
+
+  document.getElementById('regime-name').textContent = regimeName;
+  document.getElementById('regime-desc').textContent = regimeDesc;
+  document.getElementById('regime-pmi').textContent = pmi.current.toFixed(1) + (pmiTrend === 'up' ? ' ▲' : pmiTrend === 'down' ? ' ▼' : ' —');
+  document.getElementById('regime-pce').textContent = fmtPct(pce.current) + (pceTrend === 'up' ? ' ▲' : pceTrend === 'down' ? ' ▼' : ' —');
+
+  // ---- Sahm Rule ----
+  const u3series = labor.metrics.u3_rate.series; // ascending
+  function movingAvg3(series, endIdx) {
+    if (endIdx < 2) return null;
+    return (series[endIdx].value + series[endIdx-1].value + series[endIdx-2].value) / 3;
+  }
+  const n = u3series.length;
+  const currentMA3 = movingAvg3(u3series, n-1);
+  let minMA3 = Infinity;
+  for (let i = Math.max(2, n-12); i < n; i++) {
+    const ma = movingAvg3(u3series, i);
+    if (ma != null && ma < minMA3) minMA3 = ma;
+  }
+  const sahm = currentMA3 - minMA3;
+  const sahmEl = document.getElementById('sahm-value');
+  sahmEl.textContent = (sahm*100).toFixed(2) + ' pp';
+  sahmEl.className = 'sahm-value ' + (sahm >= 0.005 ? 'bad' : sahm >= 0.003 ? 'flat' : 'good');
+  document.getElementById('sahm-desc').textContent =
+    (sahm >= 0.005 ? 'At or above the 0.50pp threshold — historically a recession signal. ' : 'Below the 0.50pp threshold — no recession signal currently. ') +
+    '3-month avg U3 minus its trailing 12-month low. Threshold: 0.50pp.';
+
+  // ---- Headline grid ----
+  const grid = document.getElementById('headline-grid');
+  const domains = [
+    { title: 'Inflation', data: inflation, keys: inflation.groups.headline, arrowMode: {} },
+    { title: 'Labor Market', data: labor, keys: labor.groups.headline, arrowMode: {} },
+    { title: 'Economy', data: economy, keys: economy.groups.headline, arrowMode: {} },
+    { title: 'Consumer', data: consumer, keys: consumer.groups.headline, arrowMode: {} }
+  ];
+  domains.forEach(function(dom) {
+    let html = '<div class="domain-block"><div class="domain-title">' + dom.title + '</div>';
+    dom.keys.forEach(function(key) {
+      const m = dom.data.metrics[key];
+      if (!m) return;
+      const t = last4Trend(m.series, m.unit);
+      const cls = t === null ? '' : (dom.title === 'Inflation' ? (t === 'down' ? 'good' : t === 'up' ? 'bad' : 'flat') : (t === 'up' ? 'good' : t === 'down' ? 'bad' : 'flat'));
+      const val = m.unit === 'index' ? m.current.toFixed(1) : fmtPct(m.current);
+      html += '<div class="domain-metric"><div class="label">' + m.label + '</div><div class="value ' + cls + '">' + val + '</div></div>';
+    });
+    html += '</div>';
+    grid.innerHTML += html;
+  });
+
+  // ---- US Interest Rate 1Y chart ----
+  const us = ir.countries.find(function(c){ return c.key === 'us'; });
+  function last1y(series) {
+    if (!series.length) return series;
+    const cutoff = new Date(series[series.length-1].date);
+    cutoff.setFullYear(cutoff.getFullYear() - 1);
+    return series.filter(function(p){ return new Date(p.date) >= cutoff; });
+  }
+  drawMultiLine(
+    document.getElementById('us-rate-chart'),
+    [last1y(us.interestRateSeries), last1y(us.inflationRateSeries), last1y(us.realRateSeries)],
+    ['#5884ff', '#e5484d', '#30a46c']
+  );
+}).catch(function(err) {
+  document.getElementById('regime-name').textContent = 'Could not load data';
+  console.error(err);
+});
+</script>
+</body>
+</html>

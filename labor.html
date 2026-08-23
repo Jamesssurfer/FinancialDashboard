@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>US Labor Market Dashboard</title>
+<style>
+  :root { --up:#e5484d; --down:#e5484d; --good:#30a46c; --bad:#e5484d; --flat:#7d828c; --bg:#0b0d10; --card:#15171c; --card2:#191c22; --text:#eceef1; --muted:#8a8f98; --accent:#5884ff; --border:#22252c; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0 24px 32px; -webkit-font-smoothing: antialiased; }
+
+  nav { display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 0; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+  nav a { color: var(--muted); font-size: 13px; text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+  nav a:hover { color: var(--text); background: var(--card); }
+  nav a.active { color: #fff; background: var(--accent); }
+
+  h1 { font-size: 19px; font-weight: 650; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 12px; font-weight: 650; color: var(--muted); margin: 30px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .updated { color: var(--muted); font-size: 12px; margin: 4px 0 22px; }
+
+  .summary { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .summary-card { flex: 1; min-width: 170px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 15px 17px; }
+  .summary-card .label { color: var(--muted); font-size: 11.5px; }
+  .summary-card .value { font-size: 23px; font-weight: 700; margin-top: 5px; letter-spacing: -0.01em; }
+  .value.good, .mini-value.good { color: var(--good); }
+  .value.bad, .mini-value.bad { color: var(--bad); }
+  .value.flat, .mini-value.flat { color: var(--flat); }
+
+  .group-section { margin-bottom: 4px; }
+  .group-title { font-size: 11.5px; font-weight: 650; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 22px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+  .mini-card { background: var(--card2); border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; }
+  .mini-label { font-size: 10.5px; color: var(--muted); margin-bottom: 3px; line-height: 1.25; min-height: 26px; }
+  .mini-value { font-size: 15px; font-weight: 650; }
+  .mini-date { font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+
+  .selector-row { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
+  select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+  #selected-label { color: var(--muted); font-size: 12px; }
+
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .chart-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .chart-title { color: var(--muted); font-size: 11.5px; font-weight: 600; margin-bottom: 8px; }
+  .chart-box canvas { width: 100%; height: 220px; display: block; }
+  @media (max-width: 700px) { .chart-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="inflation.html" >Inflation</a>
+    <a href="labor.html" class="active">Labor Market</a>
+    <a href="economy.html" >Economy</a>
+    <a href="consumer.html" >Consumer</a>
+    <a href="interest-rate.html" >Interest Rate</a>
+  </nav>
+
+  <h1>US Labor Market</h1>
+  <div class="updated" id="updated">Loading…</div>
+
+  <div class="summary" id="summary"></div>
+
+  <div id="metric-groups"></div>
+
+  <h2>Trend Detail</h2>
+  <div class="selector-row">
+    <select id="metric-select"></select>
+    <span id="selected-label"></span>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box"><div class="chart-title">1 Year</div><canvas id="win-1y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">3 Years</div><canvas id="win-3y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">5 Years</div><canvas id="win-5y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">10 Years</div><canvas id="win-10y" width="540" height="220"></canvas></div>
+  </div>
+
+<script>
+window.PAGE_GROUPS = [
+  { title: 'Unemployment Rates & Payrolls', keys: ['u3_rate','u6_rate','u3_u6_gap','nfp_change','adp_change'] },
+  { title: 'JOLTS & Market Tightness', keys: ['jolts_net','jolts_hires','jolts_openings','unemployed','tightness'] },
+  { title: 'Separations & Participation', keys: ['total_sep','quits','layoffs','job_security','other_sep','participation'] },
+  { title: 'Weekly Unemployment Claims', keys: ['unemployment_claims','claims_4wk_ma'] }
+];
+// down-good: unemployment/separations/claims (falling = healthier labor market).
+// Everything else (payrolls, openings, tightness, participation): rising = healthier (default up-good).
+window.ARROW_MODE = {
+  u3_rate:'down-good', u6_rate:'down-good', u3_u6_gap:'down-good',
+  unemployed:'down-good', total_sep:'down-good', quits:'down-good', layoffs:'down-good', other_sep:'down-good',
+  unemployment_claims:'down-good', claims_4wk_ma:'down-good'
+};
+
+</script>
+<script src="dashboard.js"></script>
+<script>renderDashboard('data/labor.json');</script>
+</body>
+</html>
