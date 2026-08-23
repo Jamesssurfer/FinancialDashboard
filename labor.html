@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>US Labor Market Dashboard</title>
+<style>
+  :root { --up:#c0392b; --down:#1e8449; --flat:#7f8c8d; --bg:#0f1115; --card:#181b21; --text:#e6e6e6; --muted:#9aa0a6; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 24px; }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+  .back { color: var(--muted); font-size: 12px; text-decoration: none; }
+  .back:hover { color: var(--text); }
+  .updated { color: var(--muted); font-size: 12px; margin: 4px 0 20px; }
+
+  .summary { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .summary-card { flex: 1; min-width: 160px; background: var(--card); border-radius: 10px; padding: 14px 16px; }
+  .summary-card .label { color: var(--muted); font-size: 12px; }
+  .summary-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .summary-card .value.up { color: var(--up); }
+  .summary-card .value.down { color: var(--down); }
+  .summary-card .value.flat { color: var(--flat); }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .btn { background: var(--card); color: var(--text); border: 1px solid #2a2e37; border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; }
+  .btn.active { background: #2d6cdf; border-color: #2d6cdf; }
+  .btn:hover { border-color: #4a4f5c; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; border-bottom: 1px solid #2a2e37; }
+  td.up { color: var(--up); } td.down { color: var(--down); } td.flat { color: var(--flat); }
+
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+  .chart-box { background: var(--card); border-radius: 10px; padding: 12px; }
+  .chart-title { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+  .chart-box canvas { width: 100%; height: auto; display: block; }
+  @media (max-width: 700px) { .chart-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <a class="back" href="index.html">← Dashboard</a>
+  <h1>US Labor Market — Trend Dashboard</h1>
+  <div class="updated" id="updated">Loading…</div>
+
+  <div class="summary" id="summary"></div>
+  <div class="btn-row" id="metric-buttons"></div>
+
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Current</th><th>1Y ago</th><th>3Y ago</th><th>5Y ago</th><th>10Y ago</th></tr>
+    </thead>
+    <tbody id="metric-row"></tbody>
+  </table>
+
+  <div class="chart-grid">
+    <div class="chart-box"><div class="chart-title">1 Year</div><canvas id="chart-1y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">3 Years</div><canvas id="chart-3y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">5 Years</div><canvas id="chart-5y" width="540" height="220"></canvas></div>
+    <div class="chart-box"><div class="chart-title">10 Years</div><canvas id="chart-10y" width="540" height="220"></canvas></div>
+  </div>
+
+<script src="dashboard.js"></script>
+<script>renderDashboard('data/labor.json');</script>
+</body>
+</html>

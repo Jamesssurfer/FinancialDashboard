@@ -1,0 +1,125 @@
+{
+  "updated": "2026-08-22T22:46:40.436514+00:00",
+  "countries": [
+    {
+      "key": "uk",
+      "label": "United Kingdom",
+      "currentDate": "2026-07-01",
+      "interestRate": 0.0375,
+      "inflationRate": 0.029,
+      "realRate": 0.0085,
+      "avg3mRealRate": 0.009833333333333333,
+      "avg3mMonths": [
+        "2026-07-01",
+        "2026-06-01",
+        "2026-05-01"
+      ],
+      "rank": 1
+    },
+    {
+      "key": "au",
+      "label": "Australia",
+      "currentDate": "2026-06-01",
+      "interestRate": 0.0435,
+      "inflationRate": 0.038,
+      "realRate": 0.0055,
+      "avg3mRealRate": 0.0026666666666666666,
+      "avg3mMonths": [
+        "2026-06-01",
+        "2026-05-01",
+        "2026-04-01"
+      ],
+      "rank": 2
+    },
+    {
+      "key": "us",
+      "label": "United States",
+      "currentDate": "2026-07-01",
+      "interestRate": 0.0375,
+      "inflationRate": 0.034,
+      "realRate": 0.0035,
+      "avg3mRealRate": 0.0005000000000000001,
+      "avg3mMonths": [
+        "2026-07-01",
+        "2026-06-01",
+        "2026-05-01"
+      ],
+      "rank": 3
+    },
+    {
+      "key": "ch",
+      "label": "Switzerland",
+      "currentDate": "2026-07-01",
+      "interestRate": 0,
+      "inflationRate": 0.004,
+      "realRate": -0.004,
+      "avg3mRealRate": -0.005,
+      "avg3mMonths": [
+        "2026-07-01",
+        "2026-06-01",
+        "2026-05-01"
+      ],
+      "rank": 4
+    },
+    {
+      "key": "eu",
+      "label": "Euro Area",
+      "currentDate": "2026-07-01",
+      "interestRate": 0.024,
+      "inflationRate": 0.029,
+      "realRate": -0.005,
+      "avg3mRealRate": -0.0065,
+      "avg3mMonths": [
+        "2026-07-01",
+        "2026-06-01",
+        "2026-05-01"
+      ],
+      "rank": 5
+    },
+    {
+      "key": "jp",
+      "label": "Japan",
+      "currentDate": "2026-06-01",
+      "interestRate": 0.01,
+      "inflationRate": 0.017,
+      "realRate": -0.007,
+      "avg3mRealRate": -0.006999999999999999,
+      "avg3mMonths": [
+        "2026-06-01",
+        "2026-05-01",
+        "2026-04-01"
+      ],
+      "rank": 6
+    },
+    {
+      "key": "ca",
+      "label": "Canada",
+      "currentDate": "2026-07-01",
+      "interestRate": 0.0225,
+      "inflationRate": 0.03,
+      "realRate": -0.0075,
+      "avg3mRealRate": -0.0075,
+      "avg3mMonths": [
+        "2026-07-01",
+        "2026-06-01",
+        "2026-05-01"
+      ],
+      "rank": 7
+    },
+    {
+      "key": "nz",
+      "label": "New Zealand",
+      "currentDate": "2026-06-01",
+      "interestRate": 0.0225,
+      "inflationRate": 0.041,
+      "realRate": -0.0185,
+      "avg3mRealRate": -0.0185,
+      "avg3mMonths": [
+        "2026-06-01",
+        "2026-05-01",
+        "2026-04-01"
+      ],
+      "rank": 8
+    }
+  ]
+}
