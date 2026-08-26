@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real Interest Rate Dashboard</title>
+<style>
+  :root { --up:#e5484d; --down:#e5484d; --good:#30a46c; --bad:#e5484d; --flat:#8a8f98; --bg:#0b0d10; --card:#15171c; --text:#eceef1; --muted:#8a8f98; --accent:#5884ff; --border:#22252c; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 0 24px 32px; -webkit-font-smoothing: antialiased; }
+  nav { display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 0; margin-bottom: 12px; border-bottom: 1px solid var(--border); }
+  nav a { color: var(--muted); font-size: 13px; text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+  nav a:hover { color: var(--text); background: var(--card); }
+  nav a.active { color: var(--text); background: var(--accent); }
+  h1 { font-size: 19px; font-weight: 650; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 12px; font-weight: 650; color: var(--muted); margin: 30px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .updated { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
+  .note { color: var(--muted); font-size: 12px; margin: -4px 0 14px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--border); }
+  tbody tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
+  td.pos { color: var(--good); }
+  td.neg { color: var(--bad); }
+  .rank-badge { display:inline-block; width:20px; height:20px; border-radius:50%; background:#2a2e37; text-align:center; line-height:20px; font-size:11px; margin-right:8px; }
+  .rank-badge.top { background: var(--accent); }
+
+  .selector-row { display: flex; align-items: center; gap: 10px; margin: 8px 0 16px; }
+  select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+
+  .trend-summary { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+  .trend-summary td { padding: 9px 14px; font-size: 13px; }
+  .trend-summary td.cur { font-weight: 650; color: var(--accent); }
+  .trend-summary .cell-date { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .trend-summary .dim { color: var(--muted); }
+
+  .tf-block { margin-top: 22px; }
+  .tf-title { font-size: 13px; font-weight: 650; color: var(--text); margin-bottom: 10px; }
+  .row-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .row-single { display: flex; justify-content: center; margin-bottom: 12px; }
+  .row-single .chart-box { width: 100%; max-width: calc(50% - 6px); }
+  .chart-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .chart-title { color: var(--muted); font-size: 11.5px; font-weight: 600; margin-bottom: 8px; }
+  canvas { width: 100%; display: block; }
+  @media (max-width: 800px) { .row-pair { grid-template-columns: 1fr; } .row-single .chart-box { max-width: 100%; } }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="inflation.html">Inflation</a>
+    <a href="labor.html">Labor Market</a>
+    <a href="economy.html">Economy</a>
+    <a href="consumer.html">Consumer</a>
+    <a href="interest-rate.html" class="active">Interest Rate</a>
+  </nav>
+  <h1>Real Interest Rate — Country Comparison</h1>
+  <div class="updated" id="updated">Loading…</div>
+
+  <h2>Current Month</h2>
+  <div class="note">Each country shows its own latest available reading — release dates differ by country, so these dates won't all match.</div>
+  <table>
+    <thead>
+      <tr><th>Country</th><th>As of</th><th>Interest Rate</th><th>Inflation Rate</th><th>Real Rate</th></tr>
+    </thead>
+    <tbody id="current-body"></tbody>
+  </table>
+
+  <h2>Rolling 3-Month Ranking — Highest Real Rate</h2>
+  <div class="note">Ranked by the average real rate over each country's latest 3 available readings, not the single latest print — avoids a one-off spike distorting the ranking.</div>
+  <table>
+    <thead>
+      <tr><th>Rank</th><th>Country</th><th>3M Avg Real Rate</th><th>Months Used</th></tr>
+    </thead>
+    <tbody id="rank-body"></tbody>
+  </table>
+
+  <h2>By Country</h2>
+  <div class="selector-row">
+    <select id="country-select"></select>
+  </div>
+
+  <table class="trend-summary"><tbody><tr id="summary-rate"></tr></tbody></table>
+  <table class="trend-summary"><tbody><tr id="summary-cpi"></tr></tbody></table>
+  <table class="trend-summary"><tbody><tr id="summary-real"></tr></tbody></table>
+
+  <div id="tf-container"></div>
+
+<script src="dashboard.js"></script>
+<script>
+  const DATA_URL = 'data/interest-rate.json';
+
+  function pct(v) { return v == null ? '—' : (v * 100).toFixed(2) + '%'; }
+  function cls(v) { return v == null ? '' : (v >= 0 ? 'pos' : 'neg'); }
+  function cellHtml(point) {
+    if (!point) return '<span class="dim">—</span>';
+    return pct(point.value) + '<div class="cell-date">' + point.date + '</div>';
+  }
+  function summaryRowHtml(label, snap) {
+    if (!snap) return '<td>' + label + '</td><td colspan="5" class="dim">No data</td>';
+    return '<td>' + label + '</td>' +
+      '<td class="cur">' + pct(snap.current) + '<div class="cell-date">' + snap.currentDate + '</div></td>' +
+      '<td>' + cellHtml(snap.y1) + '</td>' +
+      '<td>' + cellHtml(snap.y3) + '</td>' +
+      '<td>' + cellHtml(snap.y5) + '</td>' +
+      '<td>' + cellHtml(snap.y10) + '</td>';
+  }
+
+  function windowSeries(series, years) {
+    if (!series.length) return series;
+    const cutoff = new Date(series[series.length - 1].date);
+    cutoff.setFullYear(cutoff.getFullYear() - years);
+    return series.filter(p => new Date(p.date) >= cutoff);
+  }
+
+  const TF = [
+    { label: '1 Year', suffix: '1y', years: 1 },
+    { label: '3 Years', suffix: '3y', years: 3 },
+    { label: '5 Years', suffix: '5y', years: 5 },
+    { label: '10 Years', suffix: '10y', years: 10 }
+  ];
+
+  function buildTimeframeBlocks() {
+    const container = document.getElementById('tf-container');
+    TF.forEach(tf => {
+      const block = document.createElement('div');
+      block.className = 'tf-block';
+      block.innerHTML = `
+        <div class="tf-title">${tf.label}</div>
+        <div class="row-pair">
+          <div class="chart-box"><div class="chart-title">Interest Rate</div><canvas id="c-${tf.suffix}-rate" width="700" height="260"></canvas></div>
+          <div class="chart-box"><div class="chart-title">Inflation Rate</div><canvas id="c-${tf.suffix}-cpi" width="700" height="260"></canvas></div>
+        </div>
+        <div class="row-single">
+          <div class="chart-box"><div class="chart-title">Real Interest Rate</div><canvas id="c-${tf.suffix}-real" width="700" height="260"></canvas></div>
+        </div>`;
+      container.appendChild(block);
+    });
+  }
+
+  function renderCountry(data, key) {
+    const c = data.countries.find(x => x.key === key);
+    if (!c) return;
+
+    document.getElementById('summary-rate').innerHTML = summaryRowHtml('Interest Rate', c.interestRateSnapshot);
+    document.getElementById('summary-cpi').innerHTML = summaryRowHtml('Inflation Rate', c.inflationRateSnapshot);
+    document.getElementById('summary-real').innerHTML = summaryRowHtml('Real Interest Rate', c.realRateSnapshot);
+
+    TF.forEach(tf => {
+      drawChart(document.getElementById(`c-${tf.suffix}-rate`), [{ label: c.label, color: '#5884ff', points: windowSeries(c.interestRateSeries, tf.years) }], 'pct');
+      drawChart(document.getElementById(`c-${tf.suffix}-cpi`), [{ label: c.label, color: '#e5484d', points: windowSeries(c.inflationRateSeries, tf.years) }], 'pct');
+      drawChart(document.getElementById(`c-${tf.suffix}-real`), [{ label: c.label, color: '#30a46c', points: windowSeries(c.realRateSeries, tf.years) }], 'pct');
+    });
+  }
+
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('updated').textContent = 'Updated ' + new Date(data.updated).toLocaleString();
+
+      const currentBody = document.getElementById('current-body');
+      data.countries.slice().sort((a, b) => a.key.localeCompare(b.key)).forEach(c => {
+        currentBody.innerHTML += `
+          <tr>
+            <td>${c.label}</td>
+            <td>${c.currentDate}</td>
+            <td>${pct(c.interestRate)}</td>
+            <td>${pct(c.inflationRate)}</td>
+            <td class="${cls(c.realRate)}">${pct(c.realRate)}</td>
+          </tr>`;
+      });
+
+      const rankBody = document.getElementById('rank-body');
+      data.countries.forEach(c => {
+        rankBody.innerHTML += `
+          <tr>
+            <td><span class="rank-badge ${c.rank <= 3 ? 'top' : ''}">${c.rank}</span></td>
+            <td>${c.label}</td>
+            <td class="${cls(c.avg3mRealRate)}">${pct(c.avg3mRealRate)}</td>
+            <td>${c.avg3mMonths.join(', ')}</td>
+          </tr>`;
+      });
+
+      const select = document.getElementById('country-select');
+      data.countries.slice().sort((a, b) => a.key.localeCompare(b.key)).forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.key; opt.textContent = c.label;
+        select.appendChild(opt);
+      });
+      select.onchange = () => renderCountry(data, select.value);
+
+      buildTimeframeBlocks();
+      select.value = 'us';
+      renderCountry(data, 'us');
+    })
+    .catch(err => {
+      document.getElementById('updated').textContent = 'Could not load data/interest-rate.json — ' + err;
+    });
+</script>
+</body>
+</html>
