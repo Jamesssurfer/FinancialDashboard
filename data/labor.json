@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T05:19:47.540Z",
+  "updated": "2026-08-30T05:22:42.282Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -7973,11 +7973,11 @@
       "key": "unemployment_claims",
       "label": "Unemployment Claims (Weekly)",
       "unit": "count",
-      "current": 206,
-      "currentDate": "2026-08-20",
+      "current": 203,
+      "currentDate": "2026-08-27",
       "y1": {
-        "value": 224,
-        "date": "2025-08-14"
+        "value": 235,
+        "date": "2025-08-21"
       },
       "series": [
         {
@@ -8495,6 +8495,10 @@
         {
           "date": "2026-08-20",
           "value": 206
+        },
+        {
+          "date": "2026-08-27",
+          "value": 203
         }
       ]
     },
@@ -8502,11 +8506,11 @@
       "key": "claims_4wk_ma",
       "label": "Unemployment Claims — 4 Week MA",
       "unit": "count",
-      "current": 202.75,
-      "currentDate": "2026-08-20",
+      "current": 204.25,
+      "currentDate": "2026-08-27",
       "y1": {
-        "value": 221.25,
-        "date": "2025-08-14"
+        "value": 225.75,
+        "date": "2025-08-21"
       },
       "series": [
         {
@@ -9012,6 +9016,10 @@
         {
           "date": "2026-08-20",
           "value": 202.75
+        },
+        {
+          "date": "2026-08-27",
+          "value": 204.25
         }
       ]
     }
