@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T05:19:54.553Z",
+  "updated": "2026-08-30T05:22:45.527Z",
   "groups": {
     "headline": [
       "real_gdp_growth",
@@ -1480,23 +1480,23 @@
       "key": "prelim_gdp",
       "label": "Prelim GDP Q/Q",
       "unit": "pct",
-      "current": 0.016,
-      "currentDate": "2026-01-01",
+      "current": 0.015,
+      "currentDate": "2026-04-01",
       "y1": {
-        "value": -0.002,
-        "date": "2025-01-01"
+        "value": 0.033,
+        "date": "2025-04-01"
       },
       "y3": {
-        "value": 0.013,
-        "date": "2023-01-01"
+        "value": 0.021,
+        "date": "2023-04-01"
       },
       "y5": {
-        "value": 0.064,
-        "date": "2021-01-01"
+        "value": 0.066,
+        "date": "2021-04-01"
       },
       "y10": {
-        "value": 0.008,
-        "date": "2016-01-01"
+        "value": 0.011,
+        "date": "2016-04-01"
       },
       "series": [
         {
@@ -1662,9 +1662,13 @@
         {
           "date": "2026-01-01",
           "value": 0.016
+        },
+        {
+          "date": "2026-04-01",
+          "value": 0.015
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "final_gdp": {
       "key": "final_gdp",
@@ -2240,7 +2244,7 @@
       "key": "demand_vs_inv",
       "label": "Demand vs Pri. Inventories",
       "unit": "pct",
-      "current": 0.0217,
+      "current": 0.022199999999999998,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0644,
@@ -2425,7 +2429,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0217
+          "value": 0.022199999999999998
         }
       ],
       "direction": "down"
@@ -2434,7 +2438,7 @@
       "key": "inflation_drag",
       "label": "Inflation Drag",
       "unit": "pct",
-      "current": 0.064,
+      "current": 0.065,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.022,
@@ -2619,7 +2623,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.064
+          "value": 0.065
         }
       ],
       "direction": "up"
@@ -2628,7 +2632,7 @@
       "key": "gdp",
       "label": "GDP",
       "unit": "level",
-      "current": 32475.21,
+      "current": 32486.06,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 30485.729,
@@ -2813,7 +2817,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 32475.21
+          "value": 32486.06
         }
       ],
       "direction": "up"
@@ -2822,7 +2826,7 @@
       "key": "gdp_growth",
       "label": "GDP Growth Rate",
       "unit": "pct",
-      "current": 0.079,
+      "current": 0.08,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.06,
@@ -3007,7 +3011,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.079
+          "value": 0.08
         }
       ],
       "direction": "up"
@@ -3016,7 +3020,7 @@
       "key": "real_gdp",
       "label": "Real GDP",
       "unit": "level",
-      "current": 24270.599,
+      "current": 24269.613,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 23770.976,
@@ -3201,7 +3205,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 24270.599
+          "value": 24269.613
         }
       ],
       "direction": "up"
@@ -3400,7 +3404,7 @@
       "key": "personal_spend_qoq",
       "label": "Personal Spending Q/Q",
       "unit": "pct",
-      "current": 0.032,
+      "current": 0.034,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.025,
@@ -3585,7 +3589,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.032
+          "value": 0.034
         }
       ],
       "direction": "up"
@@ -4116,7 +4120,7 @@
       "key": "private_capex",
       "label": "Private Capital Investment",
       "unit": "pct",
-      "current": 0.038,
+      "current": 0.039,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.031,
@@ -4301,7 +4305,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.038
+          "value": 0.039
         }
       ],
       "direction": "up"
@@ -4310,7 +4314,7 @@
       "key": "gdp_vs_priv_inv",
       "label": "GDP vs Private Inventories",
       "unit": "pct",
-      "current": -0.0067,
+      "current": -0.0072,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.0344,
@@ -4495,7 +4499,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": -0.0067
+          "value": -0.0072
         }
       ],
       "direction": "up"
@@ -4518,7 +4522,7 @@
       "key": "diagnostic_chg",
       "label": "Diagnostic % Change",
       "unit": "pct",
-      "current": 0.0182,
+      "current": 0.0201,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.005499999999999998,
@@ -4703,7 +4707,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0182
+          "value": 0.0201
         }
       ],
       "direction": "up"
@@ -4712,7 +4716,7 @@
       "key": "organic_score",
       "label": "Organic Score",
       "unit": "pct",
-      "current": 0.0332,
+      "current": 0.0351,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0245,
@@ -4897,7 +4901,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0332
+          "value": 0.0351
         }
       ],
       "direction": "up"
@@ -4906,7 +4910,7 @@
       "key": "pce_contribution",
       "label": "Consumer Spending Contribution (PCE)",
       "unit": "pct",
-      "current": 0.0212,
+      "current": 0.0231,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0168,
@@ -5091,7 +5095,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0212
+          "value": 0.0231
         }
       ],
       "direction": "up"
@@ -5294,7 +5298,7 @@
       "key": "inventories_contribution",
       "label": "Change in Inventories Contribution",
       "unit": "pct",
-      "current": -0.0067,
+      "current": -0.0072,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.0344,
@@ -5479,7 +5483,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": -0.0067
+          "value": -0.0072
         }
       ],
       "direction": "up"
@@ -5495,7 +5499,7 @@
       "key": "net_exports_contribution",
       "label": "Net Exports Contribution (X-M)",
       "unit": "pct",
-      "current": -0.0101,
+      "current": -0.0114,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0483,
@@ -5680,7 +5684,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": -0.0101
+          "value": -0.0114
         }
       ],
       "direction": "down"
@@ -5696,7 +5700,7 @@
       "key": "govt_spend_contribution",
       "label": "Government Spending Contribution",
       "unit": "pct",
-      "current": -0.0014,
+      "current": -0.0016,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.0001,
@@ -5881,7 +5885,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": -0.0014
+          "value": -0.0016
         }
       ],
       "direction": "down"
