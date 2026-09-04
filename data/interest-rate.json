@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T13:26:42.745Z",
+  "updated": "2026-09-04T13:28:49.168Z",
   "countries": [
     {
       "key": "uk",
@@ -1547,15 +1547,15 @@
     {
       "key": "au",
       "label": "Australia",
-      "currentDate": "2026-06-01",
+      "currentDate": "2026-07-01",
       "interestRate": 0.0435,
-      "inflationRate": 0.038,
-      "realRate": 0.005499999999999998,
-      "avg3mRealRate": 0.0026666666666666644,
+      "inflationRate": 0.035,
+      "realRate": 0.008499999999999994,
+      "avg3mRealRate": 0.005833333333333329,
       "avg3mMonths": [
+        "2026-07-01",
         "2026-06-01",
-        "2026-05-01",
-        "2026-04-01"
+        "2026-05-01"
       ],
       "interestRateSeries": [
         {
@@ -2571,6 +2571,10 @@
         {
           "date": "2026-06-01",
           "value": 0.038
+        },
+        {
+          "date": "2026-07-01",
+          "value": 0.035
         }
       ],
       "realRateSeries": [
@@ -3077,6 +3081,10 @@
         {
           "date": "2026-06-01",
           "value": 0.005499999999999998
+        },
+        {
+          "date": "2026-07-01",
+          "value": 0.008499999999999994
         }
       ],
       "interestRateSnapshot": {
@@ -3100,43 +3108,43 @@
         }
       },
       "inflationRateSnapshot": {
-        "current": 0.038,
-        "currentDate": "2026-06-01",
+        "current": 0.035,
+        "currentDate": "2026-07-01",
         "y1": {
-          "value": 0.019,
-          "date": "2025-06-01"
+          "value": 0.028,
+          "date": "2025-07-01"
         },
         "y3": {
-          "value": 0.054,
-          "date": "2023-06-01"
+          "value": 0.049,
+          "date": "2023-07-01"
         },
         "y5": {
           "value": 0.0381,
-          "date": "2021-06-01"
+          "date": "2021-07-01"
         },
         "y10": {
           "value": 0.0102,
-          "date": "2016-06-01"
+          "date": "2016-07-01"
         }
       },
       "realRateSnapshot": {
-        "current": 0.005499999999999998,
-        "currentDate": "2026-06-01",
+        "current": 0.008499999999999994,
+        "currentDate": "2026-07-01",
         "y1": {
-          "value": 0.0195,
-          "date": "2025-06-01"
+          "value": 0.010499999999999999,
+          "date": "2025-07-01"
         },
         "y3": {
-          "value": -0.0155,
-          "date": "2023-06-01"
+          "value": -0.008,
+          "date": "2023-07-01"
         },
         "y5": {
           "value": -0.0371,
-          "date": "2021-06-01"
+          "date": "2021-07-01"
         },
         "y10": {
           "value": 0.007300000000000001,
-          "date": "2016-06-01"
+          "date": "2016-07-01"
         }
       },
       "rank": 2
@@ -7815,15 +7823,15 @@
     {
       "key": "jp",
       "label": "Japan",
-      "currentDate": "2026-06-01",
+      "currentDate": "2026-07-01",
       "interestRate": 0.01,
-      "inflationRate": 0.017,
-      "realRate": -0.007000000000000001,
-      "avg3mRealRate": -0.007,
+      "inflationRate": 0.019,
+      "realRate": -0.009,
+      "avg3mRealRate": -0.0075,
       "avg3mMonths": [
+        "2026-07-01",
         "2026-06-01",
-        "2026-05-01",
-        "2026-04-01"
+        "2026-05-01"
       ],
       "interestRateSeries": [
         {
@@ -8814,7 +8822,11 @@
         },
         {
           "date": "2026-06-01",
-          "value": 0.017
+          "value": 0.016
+        },
+        {
+          "date": "2026-07-01",
+          "value": 0.019
         }
       ],
       "realRateSeries": [
@@ -9296,7 +9308,11 @@
         },
         {
           "date": "2026-06-01",
-          "value": -0.007000000000000001
+          "value": -0.006
+        },
+        {
+          "date": "2026-07-01",
+          "value": -0.009
         }
       ],
       "interestRateSnapshot": {
@@ -9320,38 +9336,44 @@
         }
       },
       "inflationRateSnapshot": {
-        "current": 0.017,
-        "currentDate": "2026-06-01",
+        "current": 0.019,
+        "currentDate": "2026-07-01",
         "y1": {
-          "value": 0.033,
-          "date": "2025-06-01"
+          "value": 0.031,
+          "date": "2025-07-01"
         },
         "y3": {
           "value": 0.033,
-          "date": "2023-06-01"
+          "date": "2023-07-01"
         },
         "y5": {
-          "value": -0.005,
-          "date": "2021-06-01"
+          "value": -0.003,
+          "date": "2021-07-01"
         },
-        "y10": null
+        "y10": {
+          "value": -0.004,
+          "date": "2016-07-01"
+        }
       },
       "realRateSnapshot": {
-        "current": -0.007000000000000001,
-        "currentDate": "2026-06-01",
+        "current": -0.009,
+        "currentDate": "2026-07-01",
         "y1": {
-          "value": -0.028,
-          "date": "2025-06-01"
+          "value": -0.026,
+          "date": "2025-07-01"
         },
         "y3": {
           "value": -0.034,
-          "date": "2023-06-01"
+          "date": "2023-07-01"
         },
         "y5": {
-          "value": 0.004,
-          "date": "2021-06-01"
+          "value": 0.002,
+          "date": "2021-07-01"
         },
-        "y10": null
+        "y10": {
+          "value": 0.003,
+          "date": "2016-07-01"
+        }
       },
       "rank": 6
     },
