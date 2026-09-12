@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T12:55:39.184Z",
+  "updated": "2026-09-12T13:10:42.362Z",
   "countries": [
     {
       "key": "uk",
@@ -6840,6 +6840,10 @@
         {
           "date": "2026-08-01",
           "value": 0.024
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.0265
         }
       ],
       "inflationRateSeries": [
@@ -7815,23 +7819,23 @@
         }
       ],
       "interestRateSnapshot": {
-        "current": 0.024,
-        "currentDate": "2026-08-01",
+        "current": 0.0265,
+        "currentDate": "2026-09-01",
         "y1": {
           "value": 0.0215,
-          "date": "2025-08-01"
+          "date": "2025-09-01"
         },
         "y3": {
-          "value": 0.0425,
-          "date": "2023-08-01"
+          "value": 0.045,
+          "date": "2023-09-01"
         },
         "y5": {
           "value": 0,
-          "date": "2021-08-01"
+          "date": "2021-09-01"
         },
         "y10": {
           "value": 0,
-          "date": "2016-08-01"
+          "date": "2016-09-01"
         }
       },
       "inflationRateSnapshot": {
@@ -9962,6 +9966,10 @@
         {
           "date": "2026-08-01",
           "value": 0.0225
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.0225
         }
       ],
       "inflationRateSeries": [
@@ -10930,22 +10938,22 @@
       ],
       "interestRateSnapshot": {
         "current": 0.0225,
-        "currentDate": "2026-08-01",
+        "currentDate": "2026-09-01",
         "y1": {
-          "value": 0.0275,
-          "date": "2025-08-01"
+          "value": 0.025,
+          "date": "2025-09-01"
         },
         "y3": {
           "value": 0.05,
-          "date": "2023-08-01"
+          "date": "2023-09-01"
         },
         "y5": {
           "value": 0.0025,
-          "date": "2021-08-01"
+          "date": "2021-09-01"
         },
         "y10": {
           "value": 0.005,
-          "date": "2016-08-01"
+          "date": "2016-09-01"
         }
       },
       "inflationRateSnapshot": {
@@ -11509,6 +11517,10 @@
         {
           "date": "2026-08-01",
           "value": 0.025
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.0275
         }
       ],
       "inflationRateSeries": [
@@ -12476,23 +12488,23 @@
         }
       ],
       "interestRateSnapshot": {
-        "current": 0.025,
-        "currentDate": "2026-08-01",
+        "current": 0.0275,
+        "currentDate": "2026-09-01",
         "y1": {
           "value": 0.03,
-          "date": "2025-08-01"
+          "date": "2025-09-01"
         },
         "y3": {
           "value": 0.055,
-          "date": "2023-08-01"
+          "date": "2023-09-01"
         },
         "y5": {
           "value": 0.0025,
-          "date": "2021-08-01"
+          "date": "2021-09-01"
         },
         "y10": {
           "value": 0.02,
-          "date": "2016-08-01"
+          "date": "2016-09-01"
         }
       },
       "inflationRateSnapshot": {
