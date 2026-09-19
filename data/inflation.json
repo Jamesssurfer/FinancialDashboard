@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T13:10:26.701Z",
+  "updated": "2026-09-19T01:17:51.645Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -6089,23 +6089,23 @@
       "key": "import_mom",
       "label": "Import Price Index M/M",
       "unit": "pct",
-      "current": -0.004,
-      "currentDate": "2026-07-01",
+      "current": 0.007,
+      "currentDate": "2026-08-01",
       "y1": {
-        "value": 0.004,
-        "date": "2025-07-01"
+        "value": 0.003,
+        "date": "2025-08-01"
       },
       "y3": {
-        "value": 0.004,
-        "date": "2023-07-01"
+        "value": 0.005,
+        "date": "2023-08-01"
       },
       "y5": {
-        "value": 0.003,
-        "date": "2021-07-01"
+        "value": -0.003,
+        "date": "2021-08-01"
       },
       "y10": {
-        "value": 0.001,
-        "date": "2016-07-01"
+        "value": -0.002,
+        "date": "2016-08-01"
       },
       "series": [
         {
@@ -6615,31 +6615,35 @@
         {
           "date": "2026-07-01",
           "value": -0.004
+        },
+        {
+          "date": "2026-08-01",
+          "value": 0.007
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "export_mom": {
       "key": "export_mom",
       "label": "Export Price Index M/M",
       "unit": "pct",
-      "current": -0.013,
-      "currentDate": "2026-07-01",
+      "current": 0.006,
+      "currentDate": "2026-08-01",
       "y1": {
-        "value": 0.003,
-        "date": "2025-07-01"
+        "value": 0.001,
+        "date": "2025-08-01"
       },
       "y3": {
-        "value": 0.003,
-        "date": "2023-07-01"
+        "value": 0.012,
+        "date": "2023-08-01"
       },
       "y5": {
-        "value": 0.011,
-        "date": "2021-07-01"
+        "value": 0.002,
+        "date": "2021-08-01"
       },
       "y10": {
-        "value": 0.002,
-        "date": "2016-07-01"
+        "value": -0.008,
+        "date": "2016-08-01"
       },
       "series": [
         {
@@ -7125,9 +7129,13 @@
         {
           "date": "2026-07-01",
           "value": -0.013
+        },
+        {
+          "date": "2026-08-01",
+          "value": 0.006
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "prelim_uom": {
       "key": "prelim_uom",
