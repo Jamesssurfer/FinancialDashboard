@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T01:17:55.264Z",
+  "updated": "2026-09-26T00:27:35.405Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -3169,23 +3169,23 @@
       "key": "jolts_net",
       "label": "JOLTS Net Growth",
       "unit": "count",
-      "current": 0,
-      "currentDate": "2026-06-01",
+      "current": -2000,
+      "currentDate": "2026-07-01",
       "y1": {
-        "value": -100000,
-        "date": "2025-06-01"
+        "value": 50000,
+        "date": "2025-07-01"
       },
       "y3": {
-        "value": 250000,
-        "date": "2023-06-01"
+        "value": 110000,
+        "date": "2023-07-01"
       },
       "y5": {
-        "value": 800000,
-        "date": "2021-06-01"
+        "value": 900000,
+        "date": "2021-07-01"
       },
       "y10": {
-        "value": 160000,
-        "date": "2016-06-01"
+        "value": 360000,
+        "date": "2016-07-01"
       },
       "series": [
         {
@@ -3671,31 +3671,35 @@
         {
           "date": "2026-06-01",
           "value": 0
+        },
+        {
+          "date": "2026-07-01",
+          "value": -2000
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "jolts_hires": {
       "key": "jolts_hires",
       "label": "JOLTS Hires (Non-Farm)",
       "unit": "count",
-      "current": 5350000,
-      "currentDate": "2026-06-01",
+      "current": 5005000,
+      "currentDate": "2026-07-01",
       "y1": {
-        "value": 5330000,
-        "date": "2025-06-01"
+        "value": 5220000,
+        "date": "2025-07-01"
       },
       "y3": {
-        "value": 5930000,
-        "date": "2023-06-01"
+        "value": 5670000,
+        "date": "2023-07-01"
       },
       "y5": {
-        "value": 6540000,
-        "date": "2021-06-01"
+        "value": 6720000,
+        "date": "2021-07-01"
       },
       "y10": {
-        "value": 5280000,
-        "date": "2016-06-01"
+        "value": 5430000,
+        "date": "2016-07-01"
       },
       "series": [
         {
@@ -4181,9 +4185,13 @@
         {
           "date": "2026-06-01",
           "value": 5350000
+        },
+        {
+          "date": "2026-07-01",
+          "value": 5005000
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "jolts_openings": {
       "key": "jolts_openings",
@@ -5739,23 +5747,23 @@
       "key": "total_sep",
       "label": "Total Separations",
       "unit": "count",
-      "current": 5350000,
-      "currentDate": "2026-06-01",
+      "current": 5007000,
+      "currentDate": "2026-07-01",
       "y1": {
-        "value": 5430000,
-        "date": "2025-06-01"
+        "value": 5170000,
+        "date": "2025-07-01"
       },
       "y3": {
-        "value": 5680000,
-        "date": "2023-06-01"
+        "value": 5560000,
+        "date": "2023-07-01"
       },
       "y5": {
-        "value": 5740000,
-        "date": "2021-06-01"
+        "value": 5820000,
+        "date": "2021-07-01"
       },
       "y10": {
-        "value": 5120000,
-        "date": "2016-06-01"
+        "value": 5070000,
+        "date": "2016-07-01"
       },
       "series": [
         {
@@ -6241,6 +6249,10 @@
         {
           "date": "2026-06-01",
           "value": 5350000
+        },
+        {
+          "date": "2026-07-01",
+          "value": 5007000
         }
       ],
       "direction": "down"
@@ -7779,21 +7791,24 @@
       "key": "other_sep",
       "label": "Other Separations",
       "unit": "count",
-      "current": 360000,
-      "currentDate": "2026-06-01",
+      "current": 277000,
+      "currentDate": "2026-07-01",
       "y1": {
-        "value": 340000,
-        "date": "2025-06-01"
+        "value": 270000,
+        "date": "2025-07-01"
       },
       "y3": {
         "value": 330000,
-        "date": "2023-06-01"
+        "date": "2023-07-01"
       },
       "y5": {
-        "value": 390000,
-        "date": "2021-06-01"
+        "value": 350000,
+        "date": "2021-07-01"
       },
-      "y10": null,
+      "y10": {
+        "value": 340000,
+        "date": "2016-07-01"
+      },
       "series": [
         {
           "date": "2016-07-01",
@@ -8274,6 +8289,10 @@
         {
           "date": "2026-06-01",
           "value": 360000
+        },
+        {
+          "date": "2026-07-01",
+          "value": 277000
         }
       ],
       "direction": "up"
@@ -8282,11 +8301,11 @@
       "key": "unemployment_claims",
       "label": "Unemployment Claims (Weekly)",
       "unit": "count",
-      "current": 196,
-      "currentDate": "2026-09-17",
+      "current": 197,
+      "currentDate": "2026-09-24",
       "y1": {
-        "value": 263,
-        "date": "2025-09-11"
+        "value": 231,
+        "date": "2025-09-18"
       },
       "series": [
         {
@@ -8820,6 +8839,10 @@
         {
           "date": "2026-09-17",
           "value": 196
+        },
+        {
+          "date": "2026-09-24",
+          "value": 197
         }
       ]
     },
@@ -8827,11 +8850,11 @@
       "key": "claims_4wk_ma",
       "label": "Unemployment Claims — 4 Week MA",
       "unit": "count",
-      "current": 202.75,
-      "currentDate": "2026-09-17",
+      "current": 201.25,
+      "currentDate": "2026-09-24",
       "y1": {
-        "value": 241,
-        "date": "2025-09-11"
+        "value": 240,
+        "date": "2025-09-18"
       },
       "series": [
         {
@@ -9353,6 +9376,10 @@
         {
           "date": "2026-09-17",
           "value": 202.75
+        },
+        {
+          "date": "2026-09-24",
+          "value": 201.25
         }
       ]
     }
