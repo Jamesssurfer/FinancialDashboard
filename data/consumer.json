@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T00:27:42.266Z",
+  "updated": "2026-09-30T09:07:12.054Z",
   "groups": {
     "headline": [
       "uom_sentiment",
@@ -577,23 +577,23 @@
       "key": "cb_confidence",
       "label": "CB Consumer Confidence",
       "unit": "index",
-      "current": 89.4,
-      "currentDate": "2026-08-01",
+      "current": 81.9,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 97.4,
-        "date": "2025-08-01"
+        "value": 94.2,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 106.1,
-        "date": "2023-08-01"
+        "value": 103,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 113.8,
-        "date": "2021-08-01"
+        "value": 109.3,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 101.1,
-        "date": "2016-08-01"
+        "value": 104.1,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -1107,6 +1107,10 @@
         {
           "date": "2026-08-01",
           "value": 89.4
+        },
+        {
+          "date": "2026-09-01",
+          "value": 81.9
         }
       ],
       "direction": "down"
