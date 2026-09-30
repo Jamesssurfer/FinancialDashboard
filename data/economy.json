@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T09:07:07.660Z",
+  "updated": "2026-09-30T14:10:49.803Z",
   "groups": {
     "headline": [
       "real_gdp_growth",
@@ -1706,23 +1706,23 @@
       "key": "final_gdp",
       "label": "Final GDP Q/Q",
       "unit": "pct",
-      "current": 0.021,
-      "currentDate": "2026-01-01",
+      "current": 0.022,
+      "currentDate": "2026-04-01",
       "y1": {
-        "value": -0.005,
-        "date": "2025-01-01"
+        "value": 0.038,
+        "date": "2025-04-01"
       },
       "y3": {
-        "value": 0.02,
-        "date": "2023-01-01"
+        "value": 0.021,
+        "date": "2023-04-01"
       },
       "y5": {
-        "value": 0.064,
-        "date": "2021-01-01"
+        "value": 0.067,
+        "date": "2021-04-01"
       },
       "y10": {
-        "value": 0.011,
-        "date": "2016-01-01"
+        "value": 0.014,
+        "date": "2016-04-01"
       },
       "series": [
         {
@@ -1888,31 +1888,35 @@
         {
           "date": "2026-01-01",
           "value": 0.021
+        },
+        {
+          "date": "2026-04-01",
+          "value": 0.022
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "revision_mom": {
       "key": "revision_mom",
       "label": "Revision Momentum",
       "unit": "pct",
-      "current": 0.0010000000000000009,
-      "currentDate": "2026-01-01",
+      "current": 0.006999999999999999,
+      "currentDate": "2026-04-01",
       "y1": {
-        "value": -0.002,
-        "date": "2025-01-01"
+        "value": 0.008,
+        "date": "2025-04-01"
       },
       "y3": {
-        "value": 0.009000000000000001,
-        "date": "2023-01-01"
+        "value": -0.002999999999999999,
+        "date": "2023-04-01"
       },
       "y5": {
-        "value": 0,
-        "date": "2021-01-01"
+        "value": 0.0020000000000000018,
+        "date": "2021-04-01"
       },
       "y10": {
-        "value": 0.005999999999999999,
-        "date": "2016-01-01"
+        "value": 0.002,
+        "date": "2016-04-01"
       },
       "series": [
         {
@@ -2078,31 +2082,35 @@
         {
           "date": "2026-01-01",
           "value": 0.0010000000000000009
+        },
+        {
+          "date": "2026-04-01",
+          "value": 0.006999999999999999
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "strength_vs_demand": {
       "key": "strength_vs_demand",
       "label": "Strength of GDP vs Pri. Demand",
       "unit": "pct",
-      "current": -0.0097,
-      "currentDate": "2026-01-01",
+      "current": 0.013049999999999999,
+      "currentDate": "2026-04-01",
       "y1": {
-        "value": 0.012889999999999999,
-        "date": "2025-01-01"
+        "value": -0.011739999999999997,
+        "date": "2025-04-01"
       },
       "y3": {
-        "value": 0.01891,
-        "date": "2023-01-01"
+        "value": -0.0036900000000000023,
+        "date": "2023-04-01"
       },
       "y5": {
-        "value": 0.01761,
-        "date": "2021-01-01"
+        "value": 0.07999999999999999,
+        "date": "2021-04-01"
       },
       "y10": {
-        "value": 0.019790000000000002,
-        "date": "2016-01-01"
+        "value": 0.007680000000000001,
+        "date": "2016-04-01"
       },
       "series": [
         {
@@ -2268,9 +2276,13 @@
         {
           "date": "2026-01-01",
           "value": -0.0097
+        },
+        {
+          "date": "2026-04-01",
+          "value": 0.013049999999999999
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "demand_vs_inv": {
       "key": "demand_vs_inv",
