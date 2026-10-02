@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T14:35:00.106Z",
+  "updated": "2026-10-02T12:43:09.975Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -29,23 +29,23 @@
       "key": "u3_rate",
       "label": "Unemployment Rate (U3)",
       "unit": "pct",
-      "current": 0.041,
-      "currentDate": "2026-08-01",
+      "current": 0.042,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.043,
-        "date": "2025-08-01"
+        "value": 0.0435,
+        "date": "2025-09-01"
       },
       "y3": {
         "value": 0.038,
-        "date": "2023-08-01"
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.052,
-        "date": "2021-08-01"
+        "value": 0.048,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.049,
-        "date": "2016-08-01"
+        "value": 0.05,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -559,6 +559,10 @@
         {
           "date": "2026-08-01",
           "value": 0.041
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.042
         }
       ],
       "direction": "down"
@@ -567,23 +571,23 @@
       "key": "nfp_change",
       "label": "Non-Farm Employment Change",
       "unit": "count",
-      "current": 162000,
-      "currentDate": "2026-08-01",
+      "current": 29000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 22000,
-        "date": "2025-08-01"
+        "value": 108000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 187000,
-        "date": "2023-08-01"
+        "value": 336000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 235000,
-        "date": "2021-08-01"
+        "value": 194000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 151000,
-        "date": "2016-08-01"
+        "value": 156000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -1097,31 +1101,35 @@
         {
           "date": "2026-08-01",
           "value": 162000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 29000
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "participation": {
       "key": "participation",
       "label": "Labor Force Participation Rate",
       "unit": "pct",
-      "current": 0.616,
-      "currentDate": "2026-08-01",
+      "current": 0.618,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.623,
-        "date": "2025-08-01"
+        "value": 0.625,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.628,
-        "date": "2023-08-01"
+        "value": 0.627,
+        "date": "2023-09-01"
       },
       "y5": {
         "value": 0.617,
-        "date": "2021-08-01"
+        "date": "2021-09-01"
       },
       "y10": {
         "value": 0.629,
-        "date": "2016-08-01"
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -1603,6 +1611,10 @@
         {
           "date": "2026-08-01",
           "value": 0.616
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.618
         }
       ],
       "direction": "down"
@@ -1611,23 +1623,23 @@
       "key": "u6_rate",
       "label": "Unemployment Rate (U6)",
       "unit": "pct",
-      "current": 0.077,
-      "currentDate": "2026-08-01",
+      "current": 0.076,
+      "currentDate": "2026-09-01",
       "y1": {
         "value": 0.081,
-        "date": "2025-08-01"
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.071,
-        "date": "2023-08-01"
+        "value": 0.07,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.088,
-        "date": "2021-08-01"
+        "value": 0.084,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.096,
-        "date": "2016-08-01"
+        "value": 0.097,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -2113,6 +2125,10 @@
         {
           "date": "2026-08-01",
           "value": 0.077
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.076
         }
       ],
       "direction": "down"
@@ -2121,23 +2137,23 @@
       "key": "u3_u6_gap",
       "label": "U3-U6 Gap",
       "unit": "pct",
-      "current": 0.036,
-      "currentDate": "2026-08-01",
+      "current": 0.033999999999999996,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.038000000000000006,
-        "date": "2025-08-01"
+        "value": 0.037500000000000006,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.032999999999999995,
-        "date": "2023-08-01"
+        "value": 0.03200000000000001,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.036,
-        "date": "2021-08-01"
+        "value": 0.036000000000000004,
+        "date": "2021-09-01"
       },
       "y10": {
         "value": 0.047,
-        "date": "2016-08-01"
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -2623,6 +2639,10 @@
         {
           "date": "2026-08-01",
           "value": 0.036
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.033999999999999996
         }
       ],
       "direction": "down"
@@ -2631,23 +2651,23 @@
       "key": "adp_change",
       "label": "ADP Non-Farm Employment Change",
       "unit": "count",
-      "current": 38000,
-      "currentDate": "2026-08-01",
+      "current": 90000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 54000,
-        "date": "2025-08-01"
+        "value": -32000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 177000,
-        "date": "2023-08-01"
+        "value": 89000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 374000,
-        "date": "2021-08-01"
+        "value": 568000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 177000,
-        "date": "2016-08-01"
+        "value": 154000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -3161,9 +3181,13 @@
         {
           "date": "2026-08-01",
           "value": 38000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 90000
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "jolts_net": {
       "key": "jolts_net",
