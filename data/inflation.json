@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T14:34:55.384Z",
+  "updated": "2026-10-02T12:43:06.087Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -5559,23 +5559,23 @@
       "key": "avg_hourly_mom",
       "label": "Average Hourly Earnings M/M",
       "unit": "pct",
-      "current": 0.003,
-      "currentDate": "2026-08-01",
+      "current": 0.001,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.003,
-        "date": "2025-08-01"
+        "value": 0.004,
+        "date": "2025-09-01"
       },
       "y3": {
         "value": 0.002,
-        "date": "2023-08-01"
+        "date": "2023-09-01"
       },
       "y5": {
         "value": 0.006,
-        "date": "2021-08-01"
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.001,
-        "date": "2016-08-01"
+        "value": 0.002,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -6089,9 +6089,13 @@
         {
           "date": "2026-08-01",
           "value": 0.003
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.001
         }
       ],
-      "direction": "flat"
+      "direction": "down"
     },
     "import_mom": {
       "key": "import_mom",
