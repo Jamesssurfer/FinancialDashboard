@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T00:37:16.323Z",
+  "updated": "2026-10-09T23:14:22.176Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -7153,23 +7153,23 @@
       "key": "prelim_uom",
       "label": "Prelim UoM Inflation Expectation",
       "unit": "pct",
-      "current": 0.046,
-      "currentDate": "2026-08-01",
+      "current": 0.047,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.048,
-        "date": "2025-08-01"
+        "value": 0.046,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.031,
-        "date": "2023-08-01"
+        "value": 0.038,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.047,
-        "date": "2021-08-01"
+        "value": 0.048,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.023,
-        "date": "2016-08-01"
+        "value": 0.024,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -7683,9 +7683,13 @@
         {
           "date": "2026-08-01",
           "value": 0.046
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.047
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "uom": {
       "key": "uom",
