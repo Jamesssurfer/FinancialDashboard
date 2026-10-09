@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T21:04:29.537Z",
+  "updated": "2026-10-09T00:37:24.178Z",
   "groups": {
     "headline": [
       "real_gdp_growth",
@@ -2098,7 +2098,7 @@
       "key": "strength_vs_demand",
       "label": "Strength of GDP vs Pri. Demand",
       "unit": "pct",
-      "current": 0.013049999999999999,
+      "current": 0.01663,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.011739999999999997,
@@ -2283,7 +2283,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.013049999999999999
+          "value": 0.01663
         }
       ],
       "direction": "up"
@@ -2292,7 +2292,7 @@
       "key": "demand_vs_inv",
       "label": "Demand vs Pri. Inventories",
       "unit": "pct",
-      "current": 0.022199999999999998,
+      "current": 0.0203,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0644,
@@ -2477,7 +2477,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.022199999999999998
+          "value": 0.0203
         }
       ],
       "direction": "down"
@@ -2486,7 +2486,7 @@
       "key": "inflation_drag",
       "label": "Inflation Drag",
       "unit": "pct",
-      "current": 0.065,
+      "current": 0.063,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.022,
@@ -2671,7 +2671,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.065
+          "value": 0.063
         }
       ],
       "direction": "up"
@@ -3262,7 +3262,7 @@
       "key": "core_private_demand",
       "label": "Core Private Demand",
       "unit": "pct",
-      "current": 0.03505,
+      "current": 0.03863,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.026260000000000002,
@@ -3447,7 +3447,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.03505
+          "value": 0.03863
         }
       ],
       "direction": "up"
@@ -4590,7 +4590,7 @@
       "key": "diagnostic_chg",
       "label": "Diagnostic % Change",
       "unit": "pct",
-      "current": 0.0201,
+      "current": 0.023599999999999996,
       "currentDate": "2026-04-01",
       "y1": {
         "value": -0.005499999999999998,
@@ -4775,7 +4775,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0201
+          "value": 0.023599999999999996
         }
       ],
       "direction": "up"
@@ -4784,7 +4784,7 @@
       "key": "organic_score",
       "label": "Organic Score",
       "unit": "pct",
-      "current": 0.0351,
+      "current": 0.038599999999999995,
       "currentDate": "2026-04-01",
       "y1": {
         "value": 0.0245,
@@ -4969,7 +4969,7 @@
         },
         {
           "date": "2026-04-01",
-          "value": 0.0351
+          "value": 0.038599999999999995
         }
       ],
       "direction": "up"
@@ -5969,23 +5969,23 @@
       "key": "ism_svc_pmi",
       "label": "ISM Services PMI",
       "unit": "index",
-      "current": 55.4,
-      "currentDate": "2026-08-01",
+      "current": 54.9,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 52,
-        "date": "2025-08-01"
+        "value": 50,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 54.5,
-        "date": "2023-08-01"
+        "value": 53.6,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 61.7,
-        "date": "2021-08-01"
+        "value": 61.9,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 51.4,
-        "date": "2016-08-01"
+        "value": 57.1,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -6499,6 +6499,10 @@
         {
           "date": "2026-08-01",
           "value": 55.4
+        },
+        {
+          "date": "2026-09-01",
+          "value": 54.9
         }
       ],
       "direction": "up"
@@ -6507,23 +6511,23 @@
       "key": "ism_composite",
       "label": "ISM Synthetic Composite PMI",
       "unit": "index",
-      "current": 55.24,
-      "currentDate": "2026-08-01",
+      "current": 54.81999999999999,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 51.34,
-        "date": "2025-08-01"
+        "value": 49.82,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 53.120000000000005,
-        "date": "2023-08-01"
+        "value": 52.68000000000001,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 61.34,
-        "date": "2021-08-01"
+        "value": 61.74,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 51.00000000000001,
-        "date": "2016-08-01"
+        "value": 55.980000000000004,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -7036,7 +7040,11 @@
         },
         {
           "date": "2026-08-01",
-          "value": 55.24
+          "value": 55.239999999999995
+        },
+        {
+          "date": "2026-09-01",
+          "value": 54.81999999999999
         }
       ],
       "direction": "up"
