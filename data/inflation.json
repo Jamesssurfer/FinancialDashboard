@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T23:14:22.176Z",
+  "updated": "2026-10-15T00:30:10.765Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -32,23 +32,23 @@
       "key": "cpi_yoy",
       "label": "CPI Y/Y",
       "unit": "pct",
-      "current": 0.034,
-      "currentDate": "2026-08-01",
+      "current": 0.037,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.029,
-        "date": "2025-08-01"
+        "value": 0.03,
+        "date": "2025-09-01"
       },
       "y3": {
         "value": 0.037,
-        "date": "2023-08-01"
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.053,
-        "date": "2021-08-01"
+        "value": 0.054,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.011,
-        "date": "2016-08-01"
+        "value": 0.015,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -562,6 +562,10 @@
         {
           "date": "2026-08-01",
           "value": 0.034
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.037
         }
       ],
       "direction": "up"
@@ -570,23 +574,23 @@
       "key": "core_cpi_yoy",
       "label": "Core CPI Y/Y",
       "unit": "pct",
-      "current": 0.024,
-      "currentDate": "2026-08-01",
+      "current": 0.026,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.031,
-        "date": "2025-08-01"
+        "value": 0.03,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.043,
-        "date": "2023-08-01"
+        "value": 0.041,
+        "date": "2023-09-01"
       },
       "y5": {
         "value": 0.04,
-        "date": "2021-08-01"
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.023,
-        "date": "2016-08-01"
+        "value": 0.022,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -1100,6 +1104,10 @@
         {
           "date": "2026-08-01",
           "value": 0.024
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.026
         }
       ],
       "direction": "down"
@@ -1646,23 +1654,23 @@
       "key": "cpi_mom",
       "label": "CPI M/M",
       "unit": "pct",
-      "current": 0.004,
-      "currentDate": "2026-08-01",
+      "current": 0.006,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.004,
-        "date": "2025-08-01"
+        "value": 0.003,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.006,
-        "date": "2023-08-01"
+        "value": 0.004,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.003,
-        "date": "2021-08-01"
+        "value": 0.004,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.002,
-        "date": "2016-08-01"
+        "value": 0.003,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -2176,31 +2184,35 @@
         {
           "date": "2026-08-01",
           "value": 0.004
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.006
         }
       ],
-      "direction": "flat"
+      "direction": "up"
     },
     "core_cpi_mom": {
       "key": "core_cpi_mom",
       "label": "Core CPI M/M",
       "unit": "pct",
       "current": 0.003,
-      "currentDate": "2026-08-01",
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.003,
-        "date": "2025-08-01"
+        "value": 0.002,
+        "date": "2025-09-01"
       },
       "y3": {
         "value": 0.003,
-        "date": "2023-08-01"
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.001,
-        "date": "2021-08-01"
+        "value": 0.002,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 0.003,
-        "date": "2016-08-01"
+        "value": 0.001,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -2714,9 +2726,13 @@
         {
           "date": "2026-08-01",
           "value": 0.003
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.003
         }
       ],
-      "direction": "flat"
+      "direction": "up"
     },
     "ppi_mom": {
       "key": "ppi_mom",
