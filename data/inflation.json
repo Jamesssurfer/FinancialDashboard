@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T23:50:25.029Z",
+  "updated": "2026-10-17T05:36:10.369Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -6133,23 +6133,23 @@
       "key": "import_mom",
       "label": "Import Price Index M/M",
       "unit": "pct",
-      "current": 0.007,
-      "currentDate": "2026-08-01",
+      "current": 0.011,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.003,
-        "date": "2025-08-01"
+        "value": 0,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.005,
-        "date": "2023-08-01"
+        "value": 0.001,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": -0.003,
-        "date": "2021-08-01"
+        "value": 0.004,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": -0.002,
-        "date": "2016-08-01"
+        "value": 0.001,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -6663,6 +6663,10 @@
         {
           "date": "2026-08-01",
           "value": 0.007
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.011
         }
       ],
       "direction": "up"
@@ -6671,23 +6675,23 @@
       "key": "export_mom",
       "label": "Export Price Index M/M",
       "unit": "pct",
-      "current": 0.006,
-      "currentDate": "2026-08-01",
+      "current": 0.022,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 0.001,
-        "date": "2025-08-01"
+        "value": 0,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.012,
-        "date": "2023-08-01"
+        "value": 0.005,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 0.002,
-        "date": "2021-08-01"
+        "value": 0.003,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": -0.008,
-        "date": "2016-08-01"
+        "value": 0.003,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -7172,11 +7176,15 @@
         },
         {
           "date": "2026-07-01",
-          "value": -0.013
+          "value": -0.014
         },
         {
           "date": "2026-08-01",
-          "value": 0.006
+          "value": 0.012
+        },
+        {
+          "date": "2026-09-01",
+          "value": 0.022
         }
       ],
       "direction": "up"
@@ -8807,23 +8815,23 @@
       "key": "ism_svc",
       "label": "ISM Services Prices Paid",
       "unit": "index",
-      "current": 72.6,
-      "currentDate": "2026-08-01",
+      "current": 74,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 69.2,
-        "date": "2025-08-01"
+        "value": 69.4,
+        "date": "2025-09-01"
       },
       "y3": {
         "value": 58.9,
-        "date": "2023-08-01"
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 76.7,
-        "date": "2021-08-01"
+        "value": 80.6,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 52,
-        "date": "2016-08-01"
+        "value": 52.8,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -9309,6 +9317,10 @@
         {
           "date": "2026-08-01",
           "value": 72.6
+        },
+        {
+          "date": "2026-09-01",
+          "value": 74
         }
       ],
       "direction": "up"
