@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T23:31:50.781Z",
+  "updated": "2026-10-24T03:49:49.865Z",
   "groups": {
     "headline": [
       "uom_sentiment",
@@ -35,23 +35,23 @@
       "key": "uom_sentiment",
       "label": "UoM Consumer Sentiment",
       "unit": "index",
-      "current": 48.1,
-      "currentDate": "2026-09-01",
+      "current": 48,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 55.1,
-        "date": "2025-09-01"
+        "value": 53.6,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 67.8,
-        "date": "2023-09-01"
+        "value": 63.8,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 72.8,
-        "date": "2021-09-01"
+        "value": 71.7,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 91.2,
-        "date": "2016-09-01"
+        "value": 87.2,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -569,6 +569,10 @@
         {
           "date": "2026-09-01",
           "value": 48.1
+        },
+        {
+          "date": "2026-10-01",
+          "value": 48
         }
       ],
       "direction": "down"
