@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T06:51:27.321Z",
+  "updated": "2026-11-04T19:48:42.928Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -2651,23 +2651,23 @@
       "key": "adp_change",
       "label": "ADP Non-Farm Employment Change",
       "unit": "count",
-      "current": 90000,
-      "currentDate": "2026-09-01",
+      "current": 86000,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": -32000,
-        "date": "2025-09-01"
+        "value": 42000,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 89000,
-        "date": "2023-09-01"
+        "value": 113000,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 568000,
-        "date": "2021-09-01"
+        "value": 571000,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 154000,
-        "date": "2016-09-01"
+        "value": 147000,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -3185,6 +3185,10 @@
         {
           "date": "2026-09-01",
           "value": 90000
+        },
+        {
+          "date": "2026-10-01",
+          "value": 86000
         }
       ],
       "direction": "up"
@@ -4229,23 +4233,23 @@
       "key": "jolts_openings",
       "label": "JOLTS Job Openings",
       "unit": "count",
-      "current": 7080000,
-      "currentDate": "2026-09-01",
+      "current": 7520000,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 7230000,
-        "date": "2025-09-01"
+        "value": 7660000,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 9610000,
-        "date": "2023-09-01"
+        "value": 9550000,
+        "date": "2023-10-01"
       },
       "y5": {
         "value": 10440000,
-        "date": "2021-09-01"
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 5440000,
-        "date": "2016-09-01"
+        "value": 5490000,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -4763,6 +4767,10 @@
         {
           "date": "2026-09-01",
           "value": 7080000
+        },
+        {
+          "date": "2026-10-01",
+          "value": 7520000
         }
       ],
       "direction": "down"
@@ -6309,23 +6317,23 @@
       "key": "quits",
       "label": "Job Quits",
       "unit": "count",
-      "current": 3070000,
-      "currentDate": "2026-08-01",
+      "current": 3370000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 3100000,
-        "date": "2025-08-01"
+        "value": 2990000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 3620000,
-        "date": "2023-08-01"
+        "value": 3640000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 4170000,
-        "date": "2021-08-01"
+        "value": 4350000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 3000000,
-        "date": "2016-08-01"
+        "value": 3050000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -6814,32 +6822,36 @@
         },
         {
           "date": "2026-08-01",
-          "value": 3070000
+          "value": 3040000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 3370000
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "layoffs": {
       "key": "layoffs",
       "label": "Layoffs & Discharges",
       "unit": "count",
       "current": 1640000,
-      "currentDate": "2026-08-01",
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 1830000,
-        "date": "2025-08-01"
+        "value": 1820000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 1680000,
-        "date": "2023-08-01"
+        "value": 1530000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 1330000,
-        "date": "2021-08-01"
+        "value": 1410000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 1860000,
-        "date": "2016-08-01"
+        "value": 1590000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -7328,6 +7340,10 @@
         },
         {
           "date": "2026-08-01",
+          "value": 1770000
+        },
+        {
+          "date": "2026-09-01",
           "value": 1640000
         }
       ],
@@ -7337,23 +7353,23 @@
       "key": "job_security",
       "label": "Job Security",
       "unit": "ratio",
-      "current": 1.8719512195121952,
-      "currentDate": "2026-08-01",
+      "current": 2.0548780487804876,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 1.6939890710382515,
-        "date": "2025-08-01"
+        "value": 1.6428571428571428,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 2.1547619047619047,
-        "date": "2023-08-01"
+        "value": 2.3790849673202614,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 3.1353383458646618,
-        "date": "2021-08-01"
+        "value": 3.0851063829787235,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 1.6129032258064515,
-        "date": "2016-08-01"
+        "value": 1.9182389937106918,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -7842,7 +7858,11 @@
         },
         {
           "date": "2026-08-01",
-          "value": 1.8719512195121952
+          "value": 1.7175141242937852
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2.0548780487804876
         }
       ],
       "direction": "up"
@@ -7851,7 +7871,7 @@
       "key": "other_sep",
       "label": "Other Separations",
       "unit": "count",
-      "current": 360000,
+      "current": 260000,
       "currentDate": "2026-08-01",
       "y1": {
         "value": 280000,
@@ -8356,10 +8376,10 @@
         },
         {
           "date": "2026-08-01",
-          "value": 360000
+          "value": 260000
         }
       ],
-      "direction": "up"
+      "direction": "down"
     },
     "unemployment_claims": {
       "key": "unemployment_claims",
