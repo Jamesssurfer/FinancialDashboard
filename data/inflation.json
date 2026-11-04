@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T06:51:20.310Z",
+  "updated": "2026-11-04T19:48:38.334Z",
   "groups": {
     "headline": [
       "cpi_yoy",
@@ -8835,23 +8835,23 @@
       "key": "ism_svc",
       "label": "ISM Services Prices Paid",
       "unit": "index",
-      "current": 74,
-      "currentDate": "2026-09-01",
+      "current": 73,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 69.4,
-        "date": "2025-09-01"
+        "value": 69.5,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 58.9,
-        "date": "2023-09-01"
+        "value": 58.6,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 80.6,
-        "date": "2021-09-01"
+        "value": 83.2,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 52.8,
-        "date": "2016-09-01"
+        "value": 54.8,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -9341,6 +9341,10 @@
         {
           "date": "2026-09-01",
           "value": 74
+        },
+        {
+          "date": "2026-10-01",
+          "value": 73
         }
       ],
       "direction": "up"
