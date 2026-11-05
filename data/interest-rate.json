@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T19:48:58.880Z",
+  "updated": "2026-11-05T13:32:28.244Z",
   "countries": [
     {
       "key": "uk",
@@ -534,6 +534,10 @@
         {
           "date": "2026-10-01",
           "value": 0.0375
+        },
+        {
+          "date": "2026-11-01",
+          "value": 0.04
         }
       ],
       "inflationRateSeries": [
@@ -1517,23 +1521,23 @@
         }
       ],
       "interestRateSnapshot": {
-        "current": 0.0375,
-        "currentDate": "2026-10-01",
+        "current": 0.04,
+        "currentDate": "2026-11-01",
         "y1": {
           "value": 0.04,
-          "date": "2025-10-01"
+          "date": "2025-11-01"
         },
         "y3": {
           "value": 0.0525,
-          "date": "2023-10-01"
+          "date": "2023-11-01"
         },
         "y5": {
           "value": 0.001,
-          "date": "2021-10-01"
+          "date": "2021-11-01"
         },
         "y10": {
           "value": 0.0025,
-          "date": "2016-10-01"
+          "date": "2016-11-01"
         }
       },
       "inflationRateSnapshot": {
