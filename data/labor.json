@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T13:32:06.149Z",
+  "updated": "2026-11-07T22:55:44.032Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -29,23 +29,23 @@
       "key": "u3_rate",
       "label": "Unemployment Rate (U3)",
       "unit": "pct",
-      "current": 0.042,
-      "currentDate": "2026-09-01",
+      "current": 0.041,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 0.0435,
-        "date": "2025-09-01"
+        "value": 0.044,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 0.038,
-        "date": "2023-09-01"
+        "value": 0.039,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 0.048,
-        "date": "2021-09-01"
+        "value": 0.046,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 0.05,
-        "date": "2016-09-01"
+        "value": 0.049,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -563,6 +563,10 @@
         {
           "date": "2026-09-01",
           "value": 0.042
+        },
+        {
+          "date": "2026-10-01",
+          "value": 0.041
         }
       ],
       "direction": "down"
@@ -571,23 +575,23 @@
       "key": "nfp_change",
       "label": "Non-Farm Employment Change",
       "unit": "count",
-      "current": 29000,
-      "currentDate": "2026-09-01",
+      "current": 165000,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 108000,
-        "date": "2025-09-01"
+        "value": -105000,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 336000,
-        "date": "2023-09-01"
+        "value": 150000,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 194000,
-        "date": "2021-09-01"
+        "value": 531000,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 156000,
-        "date": "2016-09-01"
+        "value": 161000,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -1105,31 +1109,35 @@
         {
           "date": "2026-09-01",
           "value": 29000
+        },
+        {
+          "date": "2026-10-01",
+          "value": 165000
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "participation": {
       "key": "participation",
       "label": "Labor Force Participation Rate",
       "unit": "pct",
-      "current": 0.618,
-      "currentDate": "2026-09-01",
+      "current": 0.619,
+      "currentDate": "2026-10-01",
       "y1": {
         "value": 0.625,
         "date": "2025-09-01"
       },
       "y3": {
-        "value": 0.627,
-        "date": "2023-09-01"
+        "value": 0.626,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 0.617,
-        "date": "2021-09-01"
+        "value": 0.618,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 0.629,
-        "date": "2016-09-01"
+        "value": 0.628,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -1615,6 +1623,10 @@
         {
           "date": "2026-09-01",
           "value": 0.618
+        },
+        {
+          "date": "2026-10-01",
+          "value": 0.619
         }
       ],
       "direction": "down"
@@ -1623,23 +1635,23 @@
       "key": "u6_rate",
       "label": "Unemployment Rate (U6)",
       "unit": "pct",
-      "current": 0.076,
-      "currentDate": "2026-09-01",
+      "current": 0.079,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 0.081,
-        "date": "2025-09-01"
+        "value": 0.084,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 0.07,
-        "date": "2023-09-01"
+        "value": 0.072,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 0.084,
-        "date": "2021-09-01"
+        "value": 0.082,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 0.097,
-        "date": "2016-09-01"
+        "value": 0.096,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -2129,6 +2141,10 @@
         {
           "date": "2026-09-01",
           "value": 0.076
+        },
+        {
+          "date": "2026-10-01",
+          "value": 0.079
         }
       ],
       "direction": "down"
@@ -2137,23 +2153,23 @@
       "key": "u3_u6_gap",
       "label": "U3-U6 Gap",
       "unit": "pct",
-      "current": 0.033999999999999996,
-      "currentDate": "2026-09-01",
+      "current": 0.038,
+      "currentDate": "2026-10-01",
       "y1": {
-        "value": 0.037500000000000006,
-        "date": "2025-09-01"
+        "value": 0.04000000000000001,
+        "date": "2025-10-01"
       },
       "y3": {
-        "value": 0.03200000000000001,
-        "date": "2023-09-01"
+        "value": 0.032999999999999995,
+        "date": "2023-10-01"
       },
       "y5": {
         "value": 0.036000000000000004,
-        "date": "2021-09-01"
+        "date": "2021-10-01"
       },
       "y10": {
         "value": 0.047,
-        "date": "2016-09-01"
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -2643,6 +2659,10 @@
         {
           "date": "2026-09-01",
           "value": 0.033999999999999996
+        },
+        {
+          "date": "2026-10-01",
+          "value": 0.038
         }
       ],
       "direction": "down"
