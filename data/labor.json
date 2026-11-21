@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T06:27:39.743Z",
+  "updated": "2026-11-21T10:02:38.618Z",
   "groups": {
     "headline": [
       "u3_rate",
@@ -3217,23 +3217,23 @@
       "key": "jolts_net",
       "label": "JOLTS Net Growth",
       "unit": "count",
-      "current": 120000,
-      "currentDate": "2026-08-01",
+      "current": 80000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": -70000,
-        "date": "2025-08-01"
+        "value": 80000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 200000,
-        "date": "2023-08-01"
+        "value": 260000,
+        "date": "2023-09-01"
       },
       "y5": {
         "value": 510000,
-        "date": "2021-08-01"
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 130000,
-        "date": "2016-08-01"
+        "value": 320000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -3727,31 +3727,35 @@
         {
           "date": "2026-08-01",
           "value": 120000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 80000
         }
       ],
-      "direction": "up"
+      "direction": "flat"
     },
     "jolts_hires": {
       "key": "jolts_hires",
       "label": "JOLTS Hires (Non-Farm)",
       "unit": "count",
-      "current": 5190000,
-      "currentDate": "2026-08-01",
+      "current": 5400000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 5140000,
-        "date": "2025-08-01"
+        "value": 5240000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 5850000,
-        "date": "2023-08-01"
+        "value": 5770000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 6390000,
-        "date": "2021-08-01"
+        "value": 6630000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 5330000,
-        "date": "2016-08-01"
+        "value": 5310000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -4245,6 +4249,10 @@
         {
           "date": "2026-08-01",
           "value": 5190000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 5400000
         }
       ],
       "direction": "up"
@@ -4799,23 +4807,23 @@
       "key": "unemployed",
       "label": "Unemployed Persons",
       "unit": "count",
-      "current": 7110000,
-      "currentDate": "2026-09-01",
+      "current": 7070000,
+      "currentDate": "2026-10-01",
       "y1": {
         "value": 7610000,
         "date": "2025-09-01"
       },
       "y3": {
-        "value": 6270000,
-        "date": "2023-09-01"
+        "value": 6460000,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 7610000,
-        "date": "2021-09-01"
+        "value": 7270000,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 7950000,
-        "date": "2016-09-01"
+        "value": 7810000,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -5301,6 +5309,10 @@
         {
           "date": "2026-09-01",
           "value": 7110000
+        },
+        {
+          "date": "2026-10-01",
+          "value": 7070000
         }
       ],
       "direction": "down"
@@ -5309,23 +5321,23 @@
       "key": "tightness",
       "label": "Labor Market Tightness",
       "unit": "ratio",
-      "current": 0.9957805907172996,
-      "currentDate": "2026-09-01",
+      "current": 1.0636492220650637,
+      "currentDate": "2026-10-01",
       "y1": {
         "value": 0.9500657030223391,
         "date": "2025-09-01"
       },
       "y3": {
-        "value": 1.532695374800638,
-        "date": "2023-09-01"
+        "value": 1.478328173374613,
+        "date": "2023-10-01"
       },
       "y5": {
-        "value": 1.3718791064388962,
-        "date": "2021-09-01"
+        "value": 1.4360385144429162,
+        "date": "2021-10-01"
       },
       "y10": {
-        "value": 0.6842767295597484,
-        "date": "2016-09-01"
+        "value": 0.7029449423815621,
+        "date": "2016-10-01"
       },
       "series": [
         {
@@ -5811,6 +5823,10 @@
         {
           "date": "2026-09-01",
           "value": 0.9957805907172996
+        },
+        {
+          "date": "2026-10-01",
+          "value": 1.0636492220650637
         }
       ],
       "direction": "up"
@@ -5819,23 +5835,23 @@
       "key": "total_sep",
       "label": "Total Separations",
       "unit": "count",
-      "current": 5070000,
-      "currentDate": "2026-08-01",
+      "current": 5320000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 5210000,
-        "date": "2025-08-01"
+        "value": 5160000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 5650000,
-        "date": "2023-08-01"
+        "value": 5510000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 5880000,
-        "date": "2021-08-01"
+        "value": 6120000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 5200000,
-        "date": "2016-08-01"
+        "value": 4990000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -6329,9 +6345,13 @@
         {
           "date": "2026-08-01",
           "value": 5070000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 5320000
         }
       ],
-      "direction": "down"
+      "direction": "up"
     },
     "quits": {
       "key": "quits",
@@ -7891,23 +7911,23 @@
       "key": "other_sep",
       "label": "Other Separations",
       "unit": "count",
-      "current": 260000,
-      "currentDate": "2026-08-01",
+      "current": 310000,
+      "currentDate": "2026-09-01",
       "y1": {
-        "value": 280000,
-        "date": "2025-08-01"
+        "value": 350000,
+        "date": "2025-09-01"
       },
       "y3": {
-        "value": 350000,
-        "date": "2023-08-01"
+        "value": 340000,
+        "date": "2023-09-01"
       },
       "y5": {
-        "value": 380000,
-        "date": "2021-08-01"
+        "value": 360000,
+        "date": "2021-09-01"
       },
       "y10": {
-        "value": 340000,
-        "date": "2016-08-01"
+        "value": 350000,
+        "date": "2016-09-01"
       },
       "series": [
         {
@@ -8397,6 +8417,10 @@
         {
           "date": "2026-08-01",
           "value": 260000
+        },
+        {
+          "date": "2026-09-01",
+          "value": 310000
         }
       ],
       "direction": "down"
